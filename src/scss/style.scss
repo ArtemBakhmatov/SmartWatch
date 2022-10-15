@@ -1,3 +1,9 @@
 @import './base/_variables';
 @import './base/_base';
+@import './base/_animations';
 @import './libs/_fonts';
+
+@import './blocks/header/_desktop';
+
+@import './blocks/header/_max-width1400';
+@import './blocks/header/_max-width1200';

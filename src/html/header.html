@@ -1,3 +1,152 @@
-<header>
-    Шапка сайта
+<header class="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="header-top__wrapper">
+                <div class="header-top__address">
+                    <div class="header-top__address-icon">
+                        <img src="icons/location.svg" alt="геолокация">
+                    </div>
+                    <div class="header-top__address-city">Владимир, ТЦ Торговые Ряды</div>
+                </div>
+            
+                <nav>
+                    <ul class="header-top__list">
+                        <li class="header-top__item">
+                            <a href="#" class="header-top__link">
+                                Главная
+                            </a>
+                        </li>
+                        <li class="header-top__item">
+                            <a href="#" class="header-top__link">
+                                Покупателям
+                            </a>
+                        </li>
+                        <li class="header-top__item">
+                            <a href="#" class="header-top__link">
+                                Отзывы
+                            </a>
+                        </li>
+                        <li class="header-top__item">
+                            <a href="#" class="header-top__link">
+                                Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </nav>  
+                <div class="header-top__phone">
+                    <div class="header-top__phone-logo">
+                        <img src="icons/phone.svg" alt="phone">
+                    </div>
+                    <div class="header-top__phone-wrapper">
+                        <a href="#" class="header-top__phone-link">8-800-77-07-999</a>
+                        <span>(с 10:00 до 22:00)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="container">
+            <div class="header-bottom__wrapper">
+                <div class="header-bottom__left">
+                    <div class="header-bottom__logo">
+                        <img src="icons/smartwatch.svg" alt="">
+                    </div>
+                    <div class="header-bottom__brend">
+                        Smart
+                        <span>Watch</span>
+                    </div>
+                </div>
+
+                <div class="header-bottom__catalog">
+                    <div class="header-bottom__hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    Каталог
+                </div>
+
+                <form action="" method="get" class="header-bottom__form">
+                    <input class="header-bottom__input" type="text" autocomplete="off" placeholder="Поиск по сайту..." id="searchHeader" name="searchHeader">
+                    <div class="header-bottom__img header-bottom__img-mini">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="#AFAFAF" d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+                    </div>
+                </form>
+
+                <div class="header-bottom__right">
+                    <a href="#" class="header-bottom__user">
+                        <div class="header-bottom__title">сравнить</div>
+                        <span class="header-bottom__count">0</span>
+                        <div class="header-bottom__img">
+                            <!-- <img src="icons/chart.svg" alt="comparison"> -->
+                            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.82051C2 3.26279 3.26279 2 4.82051 2C6.37824 2 7.64103 3.26279 7.64103 4.82051V19.1795C7.64103 20.7372 6.37824 22 4.82051 22C3.26279 22 2 20.7372 2 19.1795V4.82051ZM4.82051 3.53846C4.11246 3.53846 3.53846 4.11246 3.53846 4.82051V19.1795C3.53846 19.8875 4.11246 20.4615 4.82051 20.4615C5.52857 20.4615 6.10256 19.8875 6.10256 19.1795V4.82051C6.10256 4.11246 5.52857 3.53846 4.82051 3.53846Z" fill="#AFAFAF"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.17949 9.94872C9.17949 8.39099 10.4423 7.12821 12 7.12821C13.5577 7.12821 14.8205 8.39099 14.8205 9.94872V19.1795C14.8205 20.7372 13.5577 22 12 22C10.4423 22 9.17949 20.7372 9.17949 19.1795V9.94872ZM12 8.66667C11.2919 8.66667 10.7179 9.24066 10.7179 9.94872V19.1795C10.7179 19.8875 11.2919 20.4615 12 20.4615C12.7081 20.4615 13.2821 19.8875 13.2821 19.1795V9.94872C13.2821 9.24066 12.7081 8.66667 12 8.66667Z" fill="#AFAFAF"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.359 4.82051C16.359 3.26279 17.6218 2 19.1795 2C20.7372 2 22 3.26279 22 4.82051V19.1795C22 20.7372 20.7372 22 19.1795 22C17.6218 22 16.359 20.7372 16.359 19.1795V4.82051ZM19.1795 3.53846C18.4714 3.53846 17.8974 4.11246 17.8974 4.82051V19.1795C17.8974 19.8875 18.4714 20.4615 19.1795 20.4615C19.8875 20.4615 20.4615 19.8875 20.4615 19.1795V4.82051C20.4615 4.11246 19.8875 3.53846 19.1795 3.53846Z" fill="#AFAFAF"/>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <a href="#" class="header-bottom__user">
+                        <div class="header-bottom__title">избранное</div>
+                        <span class="header-bottom__count">0</span>
+                        <div class="header-bottom__img">
+                            <!-- <img src="icons/heart.svg" alt="heart"> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path fill="#AFAFAF" d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"/>
+                            </svg>
+                        </div>
+                    </a>
+
+                    <a href="#" class="header-bottom__user">
+                        <div class="header-bottom__title">корзина</div>
+                        <span class="header-bottom__count">0</span>
+                        <div class="header-bottom__img">
+                            <!-- <img src="icons/basket.svg" alt="basket"> -->
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 19.25 19.25" style="enable-background:new 0 0 19.25 19.25;" xml:space="preserve">
+                            <g>
+                                <g id="Layer_1_107_">
+                                    <g>
+                                        <path fill="#AFAFAF" d="M19.006,2.97c-0.191-0.219-0.466-0.345-0.756-0.345H4.431L4.236,1.461
+                                            C4.156,0.979,3.739,0.625,3.25,0.625H1c-0.553,0-1,0.447-1,1s0.447,1,1,1h1.403l1.86,11.164c0.008,0.045,0.031,0.082,0.045,0.124
+                                            c0.016,0.053,0.029,0.103,0.054,0.151c0.032,0.066,0.075,0.122,0.12,0.179c0.031,0.039,0.059,0.078,0.095,0.112
+                                            c0.058,0.054,0.125,0.092,0.193,0.13c0.038,0.021,0.071,0.049,0.112,0.065c0.116,0.047,0.238,0.075,0.367,0.075
+                                            c0.001,0,11.001,0,11.001,0c0.553,0,1-0.447,1-1s-0.447-1-1-1H6.097l-0.166-1H17.25c0.498,0,0.92-0.366,0.99-0.858l1-7
+                                            C19.281,3.479,19.195,3.188,19.006,2.97z M17.097,4.625l-0.285,2H13.25v-2H17.097z M12.25,4.625v2h-3v-2H12.25z M12.25,7.625v2
+                                            h-3v-2H12.25z M8.25,4.625v2h-3c-0.053,0-0.101,0.015-0.148,0.03l-0.338-2.03H8.25z M5.264,7.625H8.25v2H5.597L5.264,7.625z
+                                            M13.25,9.625v-2h3.418l-0.285,2H13.25z"/>
+                                        <circle fill="#AFAFAF" cx="6.75" cy="17.125" r="1.5"/>
+                                        <circle fill="#AFAFAF" cx="15.75" cy="17.125" r="1.5"/>
+                                    </g>
+                                </g>
+                            </g>
+                        </div>
+                    </a>
+
+                    <a href="#" class="header-bottom__user">
+                        <div class="header-bottom__title">войти</div>
+                        <div class="header-bottom__img">
+                            <!-- <img src="icons/user.svg" alt="user"> -->
+                            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                viewBox="0 0 490.1 490.1" style="enable-background:new 0 0 490.1 490.1;" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path fill="#AFAFAF" d="M245,261.75c71.9,0,131.4-57.3,131.4-130.3S316.9,0.05,245,0.05s-131.4,57.3-131.4,130.3S173.1,261.75,245,261.75z
+                                        M245,40.75c50,0,90.7,40.7,90.7,89.7s-40.7,89.6-90.7,89.6s-90.7-40.7-90.7-89.7S195,40.75,245,40.75z"/>
+                                    <path fill="#AFAFAF" d="M333.6,274.25c-8.3-2.1-16.7,0-21.9,6.3l-66.7,76.1l-66.7-76.1c-5.2-6.3-14.6-8.3-21.9-6.3C61.5,305.55,0,382.65,0,469.15
+                                        c0,11.5,9.4,20.9,20.9,20.9h448.3c11.5,0,20.9-9.4,20.9-20.9C490,382.65,428.5,305.55,333.6,274.25z M42.7,449.35
+                                        c8.4-57.3,50.1-106.3,114.7-131.3l73,83.4c7.3,9.4,22.9,9.4,30.2,0l73-83.4c63.6,25,106.4,75,114.7,131.3H42.7z"/>
+                                </g>
+                            </g>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
+
+
+
