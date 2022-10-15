@@ -1,5 +1,6 @@
 .header {
     box-shadow: 0 1px 24px 0 $bg-shadow;
+    height: 98px;
     &-top {
         background: $bg-theme;
         &__wrapper {
@@ -22,8 +23,8 @@
                 }
             }
             &-city {
-                font-size: 14px;
-                line-height: 14px;
+                font-size: 13px;
+                line-height: 13px;
                 color: $text-color1;
             }
         }
@@ -36,8 +37,8 @@
         }
         &__link {
             position: relative;
-            font-size: 15px;
-            line-height: 15px;
+            font-size: 14px;
+            line-height: 14px;
             color: $text-color1;
             text-decoration: none;
             &:before {
@@ -76,13 +77,13 @@
             }
             &-wrapper {
                 color: $text-color1;
-                font-size: 14px;
-                line-height: 14px;
+                font-size: 13px;
+                line-height: 13px;
             }
             &-link {
                 position: relative;
-                font-size: 14px;
-                line-height: 14px;
+                font-size: 13px;
+                line-height: 13px;
                 font-weight: 700;
                 color: $text-color1;
                 text-decoration: none;
@@ -169,8 +170,8 @@
             text-transform: uppercase;
             color: $text-color2;
             font-weight: 700;
-            font-size: 25px;
-            line-height: 25px;
+            font-size: 20px;
+            line-height: 20px;
             letter-spacing: -1px;
             span {
                 background: $bg-theme;
@@ -191,9 +192,8 @@
             color: $text-color1;
             text-transform: uppercase;
             font-weight: 600;
-            font-size: 14px;
-            line-height: 14px;
-            letter-spacing: 1px;
+            font-size: 12px;
+            line-height: 12px;
             border-radius: 8px;
             padding: 0 10px;
             cursor: pointer;
@@ -212,7 +212,7 @@
         }
         &__hamburger {
             width: 18px;
-            height: 15px;
+            height: 14px;
             span {
                 display: block;
                 height: 0.1rem;
@@ -308,7 +308,7 @@
             justify-content: center;
             color: $text-color1;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             background-color: $bg-color2;
             border-radius: 50%;
             transition: all 0.3s;
@@ -353,6 +353,53 @@
                     }
                 }
             }
+        }
+    }
+    &-catalog {
+        margin-top: 30px;
+
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 350px;
+            height: 150px;
+            background-color: $bg-color1;
+            border-radius: 8px;
+            box-shadow: 0 1px 24px 0 $bg-shadow;
+            padding: 0 32px;
+        }
+        &__img {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgb(251,248,243);
+            img {
+                width: 80%;
+                height: 80%;
+                object-fit: contain;
+            }
+        }
+        &__title {
+            color: $text-color2;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        &__list {
+            list-style-type: none;
+        }
+        &__item {
+            padding: 5px 0;
+        }
+        &__link {
+            text-decoration: none;
+            font-size: 12px;
+            line-height: 12px;
+            color: $text-color4;
         }
     }
 }
