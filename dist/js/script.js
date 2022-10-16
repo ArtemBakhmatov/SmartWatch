@@ -86,14 +86,84 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/modules/modalBuyer.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/modalBuyer.js ***!
+  \**************************************/
+/*! exports provided: modalBuyer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalBuyer", function() { return modalBuyer; });
+function modalBuyer() {
+    const headerTopList = document.querySelector('.header-top__list'),
+                  arrow = document.querySelector('.header-top__link-icon');
+    headerTopList.addEventListener('click', (event) => {
+        if(event.target && event.target.classList.contains('header-top__link-wrapper')) {
+            if(!arrow.classList.contains('header-top__link-open')) {
+                arrow.classList.add('header-top__link-open');
+            } else {
+                arrow.classList.remove('header-top__link-open');
+            }
+        }
+    });
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/modules/modalCatalog.js":
+/*!****************************************!*\
+  !*** ./src/js/modules/modalCatalog.js ***!
+  \****************************************/
+/*! exports provided: modalCatalog */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalCatalog", function() { return modalCatalog; });
+function modalCatalog() {
+    //Каталог - модальное окно
+    const hamburger = document.querySelector('.header-bottom__hamburger'),
+         btnCatalog = document.querySelector('.header-bottom__catalog'),
+         modalCatalog = document.querySelector('.header-catalog');
+
+    btnCatalog.addEventListener('click', () => {
+        if(!hamburger.classList.contains('header-bottom__hamburger-active')) {
+            hamburger.classList.add('header-bottom__hamburger-active');
+            modalCatalog.classList.add('header-catalog__active');
+        } else {
+            hamburger.classList.remove('header-bottom__hamburger-active');
+            modalCatalog.classList.remove('header-catalog__active');
+        }
+        //hamburger.classList.toggle('header-bottom__hamburger-active');
+    });
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/script.js":
 /*!**************************!*\
   !*** ./src/js/script.js ***!
   \**************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_modalCatalog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCatalog */ "./src/js/modules/modalCatalog.js");
+/* harmony import */ var _modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modalBuyer */ "./src/js/modules/modalBuyer.js");
 
 
+
+window.addEventListener('DOMContentLoaded', () => {
+    Object(_modules_modalCatalog__WEBPACK_IMPORTED_MODULE_0__["modalCatalog"])();
+    Object(_modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__["modalBuyer"])();
+});
 
 /***/ })
 

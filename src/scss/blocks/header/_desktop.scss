@@ -31,11 +31,17 @@
         &__list {
             list-style-type: none;
             display: flex;
+            align-items: center;
         }
         &__item {
             margin-right: 15px;
+            &:nth-child(2) {
+                margin-right: 30px;
+            }
         }
         &__link {
+            display: flex;
+            align-items: center;
             position: relative;
             font-size: 14px;
             line-height: 14px;
@@ -62,6 +68,25 @@
             }
             &:active {
                 color: $color-active;
+            }
+            &-wrapper {
+                display: flex;
+                position: relative;
+            }
+            &-icon {
+                position: absolute;
+                right: -13px;
+                width: 9px;
+                height: 9px;
+                transform: rotate(-90deg);
+                transition: all 0.3s;
+                img {
+                    width: 100%;
+                }
+            }
+            &-open {
+                transform: translateX(5px) rotate(90deg);
+                margin-left: 10px;
             }
         }
         &__phone {
@@ -222,6 +247,19 @@
                 background-color: $bg-color1;
                 transition: 0.5s all;
             }
+            &-active {
+                span {
+                    &:nth-child(1) {
+                        transform: translateY(6px) rotate(-45deg);
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                    }
+                    &:nth-child(3) {
+                        transform: translateY(0px) rotate(45deg);
+                    }
+                }
+            }
         }
         &__form {
             display: flex;
@@ -356,13 +394,20 @@
         }
     }
     &-catalog {
-        margin-top: 30px;
+        position: relative;
+        top: 40px;
+        opacity: 0;
+        transition: 0.3s;
+        &__active {
+            top: 10px;
+            opacity: 1;
+        }
 
         &__wrapper {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            width: 350px;
+            width: 325px;
             height: 150px;
             background-color: $bg-color1;
             border-radius: 8px;
@@ -393,15 +438,48 @@
             list-style-type: none;
         }
         &__item {
-            padding: 5px 0;
+            margin: 5px 0;
+            cursor: pointer;
+            position: relative;
+            &:before {
+                content:'';
+                position:absolute;
+                width:calc(100% + (1px * 2));
+                height:calc(100% + (1px * 2));
+                border-radius: 6px;
+                top:calc(1px/-1);
+                left:calc(1px/-1);
+                background:linear-gradient(to right, $bg-color2 0%, $bg-color2 100%), linear-gradient(to top, $bg-color2 50%, transparent 50%), linear-gradient(to top, $bg-color2 50%, transparent 50%), linear-gradient(to right, $bg-color2 0%, $bg-color2 100%), linear-gradient(to left, $bg-color2 0%, $bg-color2 100%);
+                background-size:100% 1px, 1px 200%, 1px 200%, 0% 1px, 0% 1px;
+                background-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+                background-repeat:no-repeat, no-repeat;
+                transition: transform 0.1s ease-in-out, background-position 0.1s ease-in-out, background-size 0.1s ease-in-out;
+                transform:scaleX(0) rotate(180deg);
+                transition-delay: 0.1s *2, 0.1s, 0s;
+            }
+            &:hover {
+                &:before {
+                    background-size:200% 1px, 1px 400%, 1px 400%, 55% 1px, 55% 1px;
+                    background-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+                    transform:scaleX(1) rotate(180deg);
+                    transition-delay:0s, 0.1s, 0.1s*2;
+                }
+            }
+            &:active {
+                background-color: $bg-color3;
+                .header-catalog__link {
+                    color: $text-color3;
+                }
+            }
         }
         &__link {
             text-decoration: none;
             font-size: 12px;
             line-height: 12px;
             color: $text-color4;
+            padding: 5px 4px;
+            display: flex;
         }
     }
 }
-
 

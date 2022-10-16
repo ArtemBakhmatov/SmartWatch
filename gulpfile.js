@@ -24,7 +24,7 @@ gulp.task("scripts", () => {
                     output: {
                         filename: 'script.js'
                     },
-                    watch: false,
+                    watch: true,
                     devtool: "source-map",
                 }))
                 .pipe(gulp.dest(dist + '/js'))
