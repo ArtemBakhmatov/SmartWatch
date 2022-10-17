@@ -4,6 +4,7 @@
     &-top {
         background: $bg-theme;
         &__wrapper {
+            position: relative;
             height: 33px;
             display: flex;
             align-items: center;
@@ -35,8 +36,34 @@
         }
         &__item {
             margin-right: 15px;
+            position: relative;
+            padding: 3px;
             &:nth-child(2) {
                 margin-right: 30px;
+            }
+            &:before {
+                content:'';
+                position:absolute;
+                width:calc(100% + (1px * 2));
+                height:calc(100% + (1px * 2));
+                border-radius: 6px;
+                top:calc(1px/-1);
+                left:calc(1px/-1);
+                background:linear-gradient(to right, $bg-color1 0%, $bg-color1 100%), linear-gradient(to top, $bg-color1 50%, transparent 50%), linear-gradient(to top, $bg-color1 50%, transparent 50%), linear-gradient(to right, $bg-color1 0%, $bg-color1 100%), linear-gradient(to left, $bg-color1 0%, $bg-color1 100%);
+                background-size:100% 1.5px, 1.5px 200%, 1.5px 200%, 0% 1.5px, 0% 1.5px;
+                background-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+                background-repeat:no-repeat, no-repeat;
+                transition: transform 0.1s ease-in-out, background-position 0.1s ease-in-out, background-size 0.1s ease-in-out;
+                transform:scaleX(0) rotate(180deg);
+                transition-delay: 0.1s *2, 0.1s, 0s;
+            }
+            &:hover {
+                &:before {
+                    background-size:200% 1.5px, 1.5px 400%, 1.5px 400%, 55% 1.5px, 55% 1.5px;
+                    background-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+                    transform:scaleX(1) rotate(180deg);
+                    transition-delay:0s, 0.1s, 0.1s*2;
+                }
             }
         }
         &__link {
@@ -47,25 +74,6 @@
             line-height: 14px;
             color: $text-color1;
             text-decoration: none;
-            &:before {
-                position: absolute;
-                content: '';
-                width: 0%;
-                height: 1.5px;
-                background-color: $bg-color1;
-                bottom: 0px;
-                transition: all 0.3s;
-            }
-            &:hover {
-                &:before {
-                    position: absolute;
-                    content: '';
-                    width: 100%;
-                    height: 1.5px;
-                    background-color: $bg-color1;
-                    bottom: 0px;
-                }
-            }
             &:active {
                 color: $color-active;
             }
@@ -75,7 +83,7 @@
             }
             &-icon {
                 position: absolute;
-                right: -13px;
+                right: -17px;
                 width: 9px;
                 height: 9px;
                 transform: rotate(-90deg);
@@ -136,6 +144,70 @@
                 &:active {
                     color: $color-active;
                 }
+            }
+        }
+        &__modal {
+            position: absolute;
+            height: 0;
+            z-index: 1;
+            top: 40px;
+            left: 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 24px 0 rgb(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: all 0.3s;
+            &-list {
+                list-style-type: none;
+            }
+            &-item {
+                margin: 5px 0;
+                cursor: pointer;
+                position: relative;
+                &:before {
+                    content:'';
+                    position:absolute;
+                    width:calc(100% + (1px * 2));
+                    height:calc(100% + (1px * 2));
+                    border-radius: 6px;
+                    top:calc(1px/-1);
+                    left:calc(1px/-1);
+                    background:linear-gradient(to right, $bg-color2 0%, $bg-color2 100%), linear-gradient(to top, $bg-color2 50%, transparent 50%), linear-gradient(to top, $bg-color2 50%, transparent 50%), linear-gradient(to right, $bg-color2 0%, $bg-color2 100%), linear-gradient(to left, $bg-color2 0%, $bg-color2 100%);
+                    background-size:100% 1px, 1px 200%, 1px 200%, 0% 1px, 0% 1px;
+                    background-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+                    background-repeat:no-repeat, no-repeat;
+                    transition: transform 0.1s ease-in-out, background-position 0.1s ease-in-out, background-size 0.1s ease-in-out;
+                    transform:scaleX(0) rotate(180deg);
+                    transition-delay: 0.1s *2, 0.1s, 0s;
+                }
+                &:hover {
+                    &:before {
+                        background-size:200% 1px, 1px 400%, 1px 400%, 55% 1px, 55% 1px;
+                        background-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+                        transform:scaleX(1) rotate(180deg);
+                        transition-delay:0s, 0.1s, 0.1s*2;
+                    }
+                }
+                &:active {
+                    background-color: $bg-color3;
+                    .header-top__modal-link {
+                        color: $text-color3;
+                    }
+                }
+            }
+            &-link {
+                text-decoration: none;
+                font-size: 13px;
+                line-height: 13px;
+                color: #3d4145;
+                padding: 5px 4px;
+                display: flex;
+
+            }
+            &-active {
+                opacity: 1;
+                height: 125px;
+                padding: 5px 10px;
             }
         }
     }
