@@ -1,4 +1,5 @@
 .header {
+    position: relative;
     box-shadow: 0 1px 24px 0 $bg-shadow;
     height: 98px;
     &-top {
@@ -149,7 +150,7 @@
         &__modal {
             position: absolute;
             height: 0;
-            z-index: 1;
+            z-index: -1;
             top: 40px;
             left: 400px;
             background-color: #fff;
@@ -205,6 +206,7 @@
 
             }
             &-active {
+                z-index: 1;
                 opacity: 1;
                 height: 125px;
                 padding: 5px 10px;
@@ -473,6 +475,7 @@
         &__active {
             top: 10px;
             opacity: 1;
+            z-index: 1;
         }
 
         &__wrapper {

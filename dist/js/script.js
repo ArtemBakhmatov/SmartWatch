@@ -160,6 +160,69 @@ function modalCatalog() {
 
 /***/ }),
 
+/***/ "./src/js/modules/offerSlider.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/offerSlider.js ***!
+  \***************************************/
+/*! exports provided: offerSlider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "offerSlider", function() { return offerSlider; });
+function offerSlider() {
+    const slides = document.querySelectorAll('.offer__slide'),        // все слайды
+          slider = document.querySelector('.offer__slider'),          // весь блок в контейнере
+            prev = document.querySelector('.offer__slider-prev'),     // стрелка назад
+            next = document.querySelector('.offer__slider-next'),     // стрелка вперед
+   sliderWrapper = document.querySelector('.offer__slider-wrapper'),  // обёртка всех слайдов
+     sliderField = document.querySelector('.offer__slider-inner'),    // гориз-е поле всех слайдов
+           width = window.getComputedStyle(sliderWrapper).width;      // ширина обёртки (sliderWrapper)
+
+    let slideIndex = 1,
+            offset = 0;
+
+    sliderField.style.width = 100 * slides.length + '%';
+
+    //slides.forEach(slide => slide.style.width = width);
+
+    function deleteNotDigits() {                // удалить не цифры
+        return +width.replace(/\D/g, '');       // \D - нецифры, g - для всех знаков
+    }
+
+    next.addEventListener('click', () => {
+        if(offset == deleteNotDigits() * (slides.length - 1)) {
+            offset = 0;
+        } else {
+            offset += deleteNotDigits();
+        }
+
+        sliderField.style.transform = `translateX(-${offset}px)`;
+
+        // if(slideIndex == slides.length) {
+        //     slideIndex = 1;
+        // } else {
+        //     slideIndex++;
+        // }
+    });
+
+    prev.addEventListener('click', () => {
+        if(offset == 0) {
+            offset = deleteNotDigits() * (slides.length - 1);
+        } else {
+            offset -= deleteNotDigits();
+        }
+
+        sliderField.style.transform = `translateX(-${offset}px)`;
+    });
+
+
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/script.js":
 /*!**************************!*\
   !*** ./src/js/script.js ***!
@@ -171,12 +234,15 @@ function modalCatalog() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modalCatalog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCatalog */ "./src/js/modules/modalCatalog.js");
 /* harmony import */ var _modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modalBuyer */ "./src/js/modules/modalBuyer.js");
+/* harmony import */ var _modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/offerSlider */ "./src/js/modules/offerSlider.js");
+
 
 
 
 window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_modalCatalog__WEBPACK_IMPORTED_MODULE_0__["modalCatalog"])();
     Object(_modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__["modalBuyer"])();
+    Object(_modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__["offerSlider"])();
 });
 
 /***/ })
