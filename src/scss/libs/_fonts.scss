@@ -1,5 +1,14 @@
 @font-face {
     font-family: 'Montserrat';
+    src: local('../fonts/Montserrat Bold'), local('Montserrat-Bold'),
+        url('../fonts/Montserrat-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
     src: local('../fonts/Montserrat SemiBold'), local('Montserrat-SemiBold'),
         url('../fonts/Montserrat-SemiBold.woff2') format('woff2');
     font-weight: 600;

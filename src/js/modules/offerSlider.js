@@ -86,7 +86,6 @@ function offerSlider() {
             setActiveDot();
         });
     });
-
 }
 
 export {offerSlider};
