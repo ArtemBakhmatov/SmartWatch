@@ -1,5 +1,5 @@
 function offerTimer() {
-    const deadline = '2022-10-30';    // время в будущем
+    const deadline = '2022-11-14';    // время в будущем
 
     function getTimerRemaining(endtime) {  // получить оставшийся таймер (разница между deadline и наст. время)
         let days, hours, minutes, seconds;

@@ -275,7 +275,7 @@ function offerSlider() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "offerTimer", function() { return offerTimer; });
 function offerTimer() {
-    const deadline = '2022-10-30';    // время в будущем
+    const deadline = '2022-11-14';    // время в будущем
 
     function getTimerRemaining(endtime) {  // получить оставшийся таймер (разница между deadline и наст. время)
         let days, hours, minutes, seconds;
@@ -342,6 +342,79 @@ function offerTimer() {
 
 /***/ }),
 
+/***/ "./src/js/modules/reviewsSlider.js":
+/*!*****************************************!*\
+  !*** ./src/js/modules/reviewsSlider.js ***!
+  \*****************************************/
+/*! exports provided: reviewsSlider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reviewsSlider", function() { return reviewsSlider; });
+function reviewsSlider() {
+    const slides = document.querySelectorAll('.reviews__slide'),   // все слайды
+         reviews = document.querySelector('.reviews .container'),  // весь блок в контейнере
+   sliderWrapper = document.querySelector('.reviews__wrapper'),    // обёртка всех слайдов
+     sliderField = document.querySelector('.reviews__inner'),      // гориз-е поле всех слайдов
+           width = window.getComputedStyle(sliderWrapper).width;   // ширина обёртки (sliderWrapper)
+
+    let slideIndex = 1,
+        offset = 0;                                                // смещение
+
+    sliderField.style.width = 100 * slides.length + '%';
+
+    const indicators = document.createElement('div'),
+                dots = [];
+    indicators.classList.add('reviews__indicators');
+    reviews.append(indicators);
+
+    for(let i = 0; i < slides.length; i++) {
+        const dot = document.createElement('div');
+        dot.setAttribute('data-slide-to', i + 1);
+        dot.classList.add('reviews__indicators-dot');
+
+        indicators.append(dot);
+        dots.push(dot);
+
+        if(i == 0) {
+            dot.classList.add('reviews__indicators-dot__active');
+        }
+    }
+
+    const btn = document.createElement('button');
+    btn.classList.add('btn');
+    btn.classList.add('reviews__btn');
+    btn.textContent = 'Все отзывы';
+    reviews.append(btn);
+
+    function setActiveDot() {
+        dots.forEach(dot => dot.classList.remove('reviews__indicators-dot__active'));
+        dots[slideIndex - 1].classList.add('reviews__indicators-dot__active');
+    }
+
+    function deleteNotDigits() {                // удалить не цифры
+        return +width.replace(/\D/g, '');       // \D - нецифры, g - для всех знаков
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', (event) => {
+            const slideTo = event.target.getAttribute('data-slide-to');
+            slideIndex = slideTo;
+
+            offset = deleteNotDigits(width) * (slideTo - 1);
+            sliderField.style.transform = `translateX(-${offset}px)`;
+
+            setActiveDot();
+        });
+    });
+
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/script.js":
 /*!**************************!*\
   !*** ./src/js/script.js ***!
@@ -355,6 +428,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modalBuyer */ "./src/js/modules/modalBuyer.js");
 /* harmony import */ var _modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/offerSlider */ "./src/js/modules/offerSlider.js");
 /* harmony import */ var _modules_offerTimer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/offerTimer */ "./src/js/modules/offerTimer.js");
+/* harmony import */ var _modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/reviewsSlider */ "./src/js/modules/reviewsSlider.js");
+
 
 
 
@@ -365,6 +440,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__["modalBuyer"])();
     Object(_modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__["offerSlider"])();
     Object(_modules_offerTimer__WEBPACK_IMPORTED_MODULE_3__["offerTimer"])();
+    Object(_modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__["reviewsSlider"])();
 });
 
 /***/ })

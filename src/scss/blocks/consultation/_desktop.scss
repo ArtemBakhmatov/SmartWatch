@@ -3,15 +3,89 @@
     padding-top: 10px;
     padding-bottom: 30px;
     &__wrapper {
+		position: relative;
+		overflow-y: hidden;
         height: 300px;
         border-radius: 8px;
         background-color: $bg-color1;
         box-shadow: 0 1px 24px 0 $bg-shadow;
-        padding: 0 100px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+		.light {
+			position: absolute;
+			width: 0px;
+			background-color: $bg-color3;
+			box-shadow: #858585 0px 0px 20px 2px;
+			opacity: 0;
+			top: 300px;
+			bottom: 0px;
+			left: 0px;
+			right: 0px;
+			margin: auto;
+		}
+		.x1{
+			animation: floatUp 4s infinite linear;
+			transform: scale(1.0);
+		}
+		  
+		.x2{
+			animation: floatUp 7s infinite linear;
+			transform: scale(1.6);
+			left: 15%;
+		}
+		  
+		.x3{
+			animation: floatUp 2.5s infinite linear;
+			transform: scale(.5);
+			left: -15%;
+		}
+		  
+		.x4{
+			animation: floatUp 4.5s infinite linear;
+			transform: scale(1.2);
+			left: -34%;
+		 }
+		  
+		.x5{
+			animation: floatUp 8s infinite linear;
+			transform: scale(2.2);
+			left: -57%;
+		}
+		  
+		.x6{
+			animation: floatUp 3s infinite linear;
+			transform: scale(.8);
+			left: -81%;
+		}
+		  
+		.x7{
+			animation: floatUp 5.3s infinite linear;
+			transform: scale(3.2);
+			left: 37%;
+		}
+		  
+		.x8{
+			animation: floatUp 4.7s infinite linear;
+			transform: scale(1.7);
+			left: 62%;
+		}
+		  
+		.x9{
+			animation: floatUp 4.1s infinite linear;
+			transform: scale(0.9);
+			left: 85%;
+		}
     }
+	&__content {
+		position: absolute;
+		z-index: 1;
+		display: flex;
+        align-items: center;
+        justify-content: space-between;
+		width: 100%;
+    	padding: 0 100px;
+	}
     &__left {
         width: 450px;
 		&-title {
@@ -80,11 +154,12 @@
 		}
     }
     &__right {
-        width: 450px;
+        width: 500px;
 		&-descr {
 			font-size: 14px;
 			font-weight: 600;
 			color: $text-color4;
+			text-align: end;
 			span {
 				font-weight: 400;
 			}
@@ -98,7 +173,7 @@
 			justify-content: space-between;
 		}
 		&-input {
-			width: 220px;
+			width: 245px;
 			height: 35px;
 			outline: none;
 			border-radius: 8px;
@@ -124,8 +199,12 @@
 			color: $text-color4;
 		}
 		&-btn {
-			width: 220px;
+			width: 245px;
 			height: 35px;
+			&:active {
+				background-color: $color-active;
+				border: 1px solid $bg-color2;
+			}
 		}
 		&-label {
 			cursor: pointer;
@@ -160,7 +239,7 @@
 			margin-right: 8px;
 			width: 20px;
 			height: 20px;
-			border: 2px solid $bg-color3;
+			border: 2px solid $bg-shadow;
 			border-radius: 3px;
 			svg {
 				position: absolute;
@@ -197,3 +276,4 @@
 		}
 	}
 }
+

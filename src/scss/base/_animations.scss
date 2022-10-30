@@ -3,3 +3,24 @@
 		transform: rotate(1turn);
 	}
 }
+
+@keyframes floatUp{
+	0% {
+		top: 300px; 
+		opacity: 0;
+	}
+	25%{
+		opacity: 1;
+	}
+	50%{
+		top: 0; 
+		opacity: .8;
+	}
+	75%{
+		opacity: 1;
+	}
+	100%{
+		top: -300px; 
+		opacity: 0;
+	}
+}
