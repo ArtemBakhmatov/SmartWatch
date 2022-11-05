@@ -86,6 +86,57 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/modules/cardSliderColor.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/cardSliderColor.js ***!
+  \*******************************************/
+/*! exports provided: cardSliderColor */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "cardSliderColor", function() { return cardSliderColor; });
+function cardSliderColor() {
+    const tabs = document.querySelectorAll('.hits__item-color'), // все табы 
+   tabsWrapper = document.querySelector('.hits__item-colors'),   // обертка всех табов
+    tabsSlides = document.querySelectorAll('.hits__item-slide'); // все слайды
+
+    function hideTabSlides() {  // Скрыть все слайды
+        tabsSlides.forEach(item => {
+            item.classList.add('hide');
+            item.classList.remove('show');
+        });
+        tabs.forEach(item => {
+            item.classList.remove('hits__item-color__active');
+        });
+    }
+
+    function showTabSlides(i) {  // Показать слайд (Первый)
+        tabsSlides[i].classList.add('show');
+        tabsSlides[i].classList.remove('hide');
+        tabs[i].classList.add('hits__item-color__active');
+    }
+
+    hideTabSlides();
+    showTabSlides(0);
+
+    tabsWrapper.addEventListener('click', (event) => {
+        if(event.target && event.target.classList.contains('hits__item-color')) {
+            tabs.forEach((item, i) => {
+                if(event.target == item) {
+                    hideTabSlides();
+                    showTabSlides(i);
+                }
+            });
+        }
+    });
+
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/modalBuyer.js":
 /*!**************************************!*\
   !*** ./src/js/modules/modalBuyer.js ***!
@@ -429,6 +480,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/offerSlider */ "./src/js/modules/offerSlider.js");
 /* harmony import */ var _modules_offerTimer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/offerTimer */ "./src/js/modules/offerTimer.js");
 /* harmony import */ var _modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/reviewsSlider */ "./src/js/modules/reviewsSlider.js");
+/* harmony import */ var _modules_cardSliderColor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/cardSliderColor */ "./src/js/modules/cardSliderColor.js");
+
 
 
 
@@ -441,6 +494,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__["offerSlider"])();
     Object(_modules_offerTimer__WEBPACK_IMPORTED_MODULE_3__["offerTimer"])();
     Object(_modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__["reviewsSlider"])();
+    Object(_modules_cardSliderColor__WEBPACK_IMPORTED_MODULE_5__["cardSliderColor"])();
 });
 
 /***/ })
