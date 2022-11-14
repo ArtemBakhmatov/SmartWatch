@@ -1,6 +1,6 @@
-function menuCardChildren() {
-    function menuCardRender(hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3) {
-    ///////////////////////////// HTML /////////////////////////////////
+function menuCardGrown() {
+    function menuCardRender(hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3, opacity) {
+        ///////////////////////////// HTML /////////////////////////////////
         const div = document.createElement('div');
         div.classList.add('hits__product');
         
@@ -37,6 +37,7 @@ function menuCardChildren() {
 
         const circle3 = document.createElement('div');
         circle3.classList.add('hits__item-circle');
+        circle3.classList.add(opacity);
         colors.append(circle3);
 
         const circleColor3 = document.createElement('span');
@@ -125,7 +126,7 @@ function menuCardChildren() {
                             <stop stop-color="#d2d2d2" stop-opacity="1" offset="100%"></stop>
                         </linearGradient>
                     </defs>
-                    <path d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z" fill="url(#_kb11ciszh__11597)"></path>
+                    <path d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z" fill="rgb(255, 169, 0)"></path>
                 </svg>
             `;
             ratingList.append(star);
@@ -224,8 +225,8 @@ function menuCardChildren() {
         
         bottomWrapper.append(btnBasket);
         
-        document.querySelector('.hits__content-children').append(div);
-    ///////////////////////////////////////////////////////////////////////////////////////
+        document.querySelector('.hits__content-grown').append(div);
+        ///////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////slider////////////////////////////
         const imgArr = [];
         imgArr.push(img1, img2, img3);
@@ -276,99 +277,171 @@ function menuCardChildren() {
 
     menuCardRender(
         'new',
-        'img/cards/children/wonlex/KT17/black.jpeg',
-        'img/cards/children/wonlex/KT17/pink.jpeg',
-        'img/cards/children/wonlex/KT17/blue.jpeg',
+        'img/cards/grown/LinWear/LW07/golden.jpg',
+        'img/cards/grown/LinWear/LW07/silver.jpg',
+        '',
         4,
-        6,
-        'Детские смарт-часы KT22 «4G»',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
+        7,
+        'Cмарт-часы Smart Watch LW07',
+        'Золотистый',
+        'Серебристый', 
+        '',
+        'LinWear',
+        'Для взрослых',
+        '8490',
+        '6900',
+        'golden',
+        'silver',
+        'opacity',
+        'opacity'
+    );  
+
+    menuCardRender(
+        'new',
+        'img/cards/grown/LinWear/LA10/black.jpg',
+        'img/cards/grown/LinWear/LA10/brown.png',
+        '',
+        5,
+        14,
+        'Cмарт-часы Smart Watch LA10',
+        'Черный',
+        'Коричневый', 
+        '',
+        'LinWear',
+        'Для взрослых',
+        '6900',
+        '7490',
+        'black',
+        'brown',
+        'opacity',
+        'opacity'
+    );  
+    
+    menuCardRender(
+        'new',
+        'img/cards/grown/LinWear/LW12/black.jpg',
+        'img/cards/grown/LinWear/LW12/red.jpg',
+        'img/cards/grown/LinWear/LW12/darkBlue.jpg',
+        5,
+        21,
+        'Cмарт-часы Smart Watch LW12',
+        'Черный',
+        'Красный', 
+        'Синий',
+        'LinWear',
+        'Для взрослых',
         '8490',
         '6900',
         'black',
-        'pink',
-        'blue'
+        'red',
+        'dark__blue',
+        'visible'
     );  
+
     menuCardRender(
         'hit',
-        'img/cards/children/wonlex/KT15/black.jpg',
-        'img/cards/children/wonlex/KT15/pink.jpg',
-        'img/cards/children/wonlex/KT15/blue.jpg',
+        'img/cards/grown/LinWear/LW09/black.jpg',
+        'img/cards/grown/LinWear/LW09/golden.jpg',
+        'img/cards/grown/LinWear/LW09/silver.jpg',
         5,
-        13,
-        'Детские смарт-часы KT15 «4G»',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
+        2,
+        'Cмарт-часы Smart Watch LW09',
+        'Черный',
+        'Золотистый',
+        'Серебристый', 
+        'LinWear',
+        'Для взрослых',
+        '8490',
+        '6900',
+        'black',
+        'golden',
+        'silver',
+        'visible'
+    );  
+
+    menuCardRender(
+        'hit',
+        'img/cards/grown/LinWear/LW36/black.jpg',
+        'img/cards/grown/LinWear/LW36/pink.jpg',
+        '',
+        5,
+        5,
+        'Cмарт-часы Smart Watch LW36',
+        'Черный',
+        'Розовый',
+        '', 
+        'LinWear',
+        'Для взрослых',
+        '8490',
+        '5490',
+        'black',
+        'pink',
+        'opacity',
+        'opacity'
+    );  
+
+    menuCardRender(
+        'hit',
+        'img/cards/grown/LinWear/LA08/black.jpg',
+        'img/cards/grown/LinWear/LA08/silver.jpg',
+        'img/cards/grown/LinWear/LA08/pink.jpeg',
+        5,
+        3,
+        'Cмарт-часы Smart Watch LA08',
+        'Черный',
+        'Серебристый',
+        'Розовый', 
+        'LinWear',
+        'Для взрослых',
         '9490',
         '7490',
         'black',
+        'silver',
         'pink',
-        'blue'
-    ); 
+        'visible'
+    );  
+
     menuCardRender(
         'hit',
-        'img/cards/children/wonlex/KT12/black.jpg',
-        'img/cards/children/wonlex/KT12/pink.jpg',
-        'img/cards/children/wonlex/KT12/blue.jpg',
+        'img/cards/grown/LinWear/LW06/golden.jpg',
+        'img/cards/grown/LinWear/LW06/silver.jpg',
+        '',
         5,
         11,
-        'Детские смарт-часы KT12 «4G»',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
+        'Cмарт-часы Smart Watch LW06',
+        'Золотистый',
+        'Серебристый',
+        '', 
+        'LinWear',
+        'Для взрослых',
         '8490',
-        '6490',
-        'black',
-        'pink',
-        'blue'
-    ); 
-    menuCardRender(
-        'hit',
-        'img/cards/children/wonlex/GW500s/black.jpg',
-        'img/cards/children/wonlex/GW500s/pink.jpg',
-        'img/cards/children/wonlex/GW500s/blue.jpg',
-        3,
-        37,
-        'Детские смарт-часы GW500s',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
-        '5490',
-        '3490',
-        'black',
-        'pink',
-        'blue'
-    ); 
-    menuCardRender(
-        'hit',
-        'img/cards/children/wonlex/KT22/black.jpg',
-        'img/cards/children/wonlex/KT22/pink.jpg',
-        'img/cards/children/wonlex/KT22/blue.jpg',
-        5,
-        25,
-        'Детские смарт-часы KT22 «4G»',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
-        '8490',
-        '6490',
-        'black',
-        'pink',
-        'blue'
+        '6900',
+        'golden',
+        'silver',
+        'opacity',
+        'opacity'
     );  
-}    
-    
-export {menuCardChildren};
+
+    menuCardRender(
+        'hit',
+        'img/cards/grown/LinWear/DT1/black.jpg',
+        'img/cards/grown/LinWear/DT1/silver.jpg',
+        '',
+        5,
+        9,
+        'Cмарт-часы Smart Watch DT1',
+        'Черный',
+        'Серебристый',
+        '', 
+        'LinWear',
+        'Для взрослых',
+        '8490',
+        '4900',
+        'black',
+        'silver',
+        'opacity',
+        'opacity'
+    );  
+}
+
+export {menuCardGrown};

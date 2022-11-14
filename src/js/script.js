@@ -4,6 +4,9 @@ import { offerSlider } from "./modules/offerSlider";
 import { offerTimer } from "./modules/offerTimer";
 import { reviewsSlider } from "./modules/reviewsSlider";
 import { menuCardChildren } from "./modules/menuCardChildren";
+import { menuCardGrown } from "./modules/menuCardGrown";
+import { tabsCards } from "./modules/tabsCards";
+import { menuCardElderly } from "./modules/menuCardElderly";
 
 window.addEventListener('DOMContentLoaded', () => {
     modalCatalog();
@@ -12,4 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     offerTimer();
     reviewsSlider();
     menuCardChildren();
+    menuCardGrown();
+    menuCardElderly();
+    tabsCards();
 });
