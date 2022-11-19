@@ -1310,6 +1310,56 @@ function modalBuyer() {
 
 /***/ }),
 
+/***/ "./src/js/modules/modalCard.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/modalCard.js ***!
+  \*************************************/
+/*! exports provided: modalCard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalCard", function() { return modalCard; });
+function modalCard() {
+    const tabs = document.querySelectorAll('.modalCard__item'),        // все табы
+   tabsWrapper = document.querySelector('.modalCard__items'),          // обертка всех табов
+   tabsContent = document.querySelectorAll('.modalCard__item-block');  // все контенты
+
+    function hideTabContent() { // скрыть все контенты
+        tabsContent.forEach(item => {
+            item.classList.add('hide');
+            item.classList.remove('show', 'fade');
+        });
+        tabs.forEach(item => {
+            item.classList.remove('modalCard__item-active');
+        });
+    }
+
+    function showTabContent(i) {  // открыть первый контент
+        tabsContent[i].classList.add('show', 'fade');
+        tabsContent[i].classList.remove('hide');
+        tabs[i].classList.add('modalCard__item-active');
+    }
+
+    hideTabContent();
+    showTabContent(0);
+
+    tabsWrapper.addEventListener('click', (event) => {
+        if(event.target && event.target.classList.contains('modalCard__item')) {
+            tabs.forEach((item, i) => {
+                if(event.target == item) {
+                    hideTabContent();
+                    showTabContent(i);
+                }
+            });
+        }
+    });
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/modalCatalog.js":
 /*!****************************************!*\
   !*** ./src/js/modules/modalCatalog.js ***!
@@ -1664,8 +1714,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/reviewsSlider */ "./src/js/modules/reviewsSlider.js");
 /* harmony import */ var _modules_menuCardChildren__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/menuCardChildren */ "./src/js/modules/menuCardChildren.js");
 /* harmony import */ var _modules_menuCardGrown__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/menuCardGrown */ "./src/js/modules/menuCardGrown.js");
-/* harmony import */ var _modules_tabsCards__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/tabsCards */ "./src/js/modules/tabsCards.js");
-/* harmony import */ var _modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/menuCardElderly */ "./src/js/modules/menuCardElderly.js");
+/* harmony import */ var _modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/menuCardElderly */ "./src/js/modules/menuCardElderly.js");
+/* harmony import */ var _modules_tabsCards__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/tabsCards */ "./src/js/modules/tabsCards.js");
+/* harmony import */ var _modules_modalCard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/modalCard */ "./src/js/modules/modalCard.js");
+
 
 
 
@@ -1684,8 +1736,9 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__["reviewsSlider"])();
     Object(_modules_menuCardChildren__WEBPACK_IMPORTED_MODULE_5__["menuCardChildren"])();
     Object(_modules_menuCardGrown__WEBPACK_IMPORTED_MODULE_6__["menuCardGrown"])();
-    Object(_modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_8__["menuCardElderly"])();
-    Object(_modules_tabsCards__WEBPACK_IMPORTED_MODULE_7__["tabsCards"])();
+    Object(_modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_7__["menuCardElderly"])();
+    Object(_modules_tabsCards__WEBPACK_IMPORTED_MODULE_8__["tabsCards"])();
+    Object(_modules_modalCard__WEBPACK_IMPORTED_MODULE_9__["modalCard"])();
 });
 
 /***/ })
