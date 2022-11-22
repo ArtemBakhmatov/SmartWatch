@@ -9,6 +9,9 @@
     max-width: 1220px;
     margin: 0 auto;
     padding: 0 10px;
+    &__relative {
+        position: relative;
+    }
 }
 
 .btn {
@@ -25,6 +28,7 @@
     padding: 0 10px;
     cursor: pointer;
     transition: all 0.3s;
+    outline: none;
     &:hover {
         background-color: $bg-color1;
         color: $text-color3;
