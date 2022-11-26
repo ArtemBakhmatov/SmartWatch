@@ -1,8 +1,8 @@
-function modalCardChildren() {
-    function modalCardRender(image1, image2, image3, titleModal, color1, color2, color3, firm, forWhom, numberStars, numberReviews, priceOld, priceNew, availability) {
+function modalCardElderly() {
+    function modalCardRender(image1, image2, image3, titleModal, color1, color2, color3, firm, forWhom, numberStars, numberReviews, priceOld, priceNew, availability, opacity) {
         const modalCard = document.createElement('div');
         modalCard.classList.add('modalCard');
-        document.querySelector('.hits__content-children').append(modalCard);
+        document.querySelector('.hits__content-elderly').append(modalCard);
 
         const container = document.createElement('div');
         container.classList.add('container');
@@ -108,7 +108,7 @@ function modalCardChildren() {
                             <stop stop-color="#d2d2d2" stop-opacity="1" offset="100%"></stop>
                         </linearGradient>
                     </defs>
-                    <path d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z" fill="url(#_kb11ciszh__11597)"></path>
+                    <path d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z" fill="rgb(255, 169, 0)"></path>
                 </svg>
             `;
             ratingList.append(star);
@@ -146,6 +146,7 @@ function modalCardChildren() {
 
         const tab2 = document.createElement('div');
         tab2.classList.add('modalCard__tab');
+        tab2.classList.add(opacity);
         tabsWrapper.append(tab2);
 
         const tabImg2 = document.createElement('img');
@@ -154,6 +155,7 @@ function modalCardChildren() {
 
         const tab3 = document.createElement('div');
         tab3.classList.add('modalCard__tab');
+        tab3.classList.add(opacity);
         tabsWrapper.append(tab3);
 
         const tabImg3 = document.createElement('img');
@@ -1193,7 +1195,7 @@ function modalCardChildren() {
             document.body.style.overflow = 'hidden';
         }
 
-        document.querySelector('.hits__content-children').addEventListener('click', (event) => {
+        document.querySelector('.hits__content-elderly').addEventListener('click', (event) => {
             if(event.target && event.target.classList.contains('hits__item-bottom__btn')) {
                 document.querySelectorAll('.hits__item-bottom__btn').forEach((item, i) => {
                     if(event.target === item) {
@@ -1220,89 +1222,40 @@ function modalCardChildren() {
     }
 
     modalCardRender(
-        'img/cards/children/wonlex/KT17/black.jpeg',
-        'img/cards/children/wonlex/KT17/pink.jpeg',
-        'img/cards/children/wonlex/KT17/blue.jpeg',
-        'Детские смарт-часы KT17 «4G',
-        'Черные',
-        'Розовые', 
-        'Голубые',
+        'img/cards/elderly/wonlex/GW700s/black.jpg',
+        '',
+        '',
+        'Cмарт-часы GW700s',
+        'Черный',
+        '', 
+        '',
         'Wonlex',
-        'Для детей',
-        5,
-        6,
-        '8490',
-        '6900',
-        'Есть',
-    );
-
-    modalCardRender(
-        'img/cards/children/wonlex/KT15/black.jpg',
-        'img/cards/children/wonlex/KT15/pink.jpg',
-        'img/cards/children/wonlex/KT15/blue.jpg',
-        'Детские смарт-часы KT15 «4G»',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
-        5,
-        13,
-        '9490',
+        'Для пожилых',
+        1,
+        2,
         '7490',
-        'Есть',
-    );
-
-    modalCardRender(
-        'img/cards/children/wonlex/KT12/black.jpg',
-        'img/cards/children/wonlex/KT12/pink.jpg',
-        'img/cards/children/wonlex/KT12/blue.jpg',
-        'Детские смарт-часы KT12 «4G»',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
-        5,
-        11,
-        '8490',
-        '6490',
-        'Есть',
-    );
-
-    modalCardRender(
-        'img/cards/children/wonlex/GW500s/black.jpg',
-        'img/cards/children/wonlex/GW500s/pink.jpg',
-        'img/cards/children/wonlex/GW500s/blue.jpg',
-        'Детские смарт-часы GW500s',
-        'Черные',
-        'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
-        3,
-        37,
         '5490',
-        '3490',
         'Есть',
+        'opacity'
     );
 
     modalCardRender(
-        'img/cards/children/wonlex/KT22/black.jpg',
-        'img/cards/children/wonlex/KT22/pink.jpg',
-        'img/cards/children/wonlex/KT22/blue.jpg',
-        'Детские смарт-часы KT22 «4G»',
-        'Черные',
-        'Розовые', 
-        'Голубые',
+        'img/cards/elderly/wonlex/GW700/golden.jpg',
+        '',
+        '',
+        'Cмарт-часы GW700',
+        'Золотистый',
+        '', 
+        '',
         'Wonlex',
-        'Для детей',
-        5,
-        25,
-        '8490',
-        '6490',
+        'Для пожилых',
+        0,
+        0,
+        '5990',
+        '4490',
         'Есть',
+        'opacity'
     );
 }
 
-export {modalCardChildren};
+export {modalCardElderly};

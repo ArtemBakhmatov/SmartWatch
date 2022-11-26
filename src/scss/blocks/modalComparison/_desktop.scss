@@ -1,0 +1,160 @@
+.modalComparison {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    &__close {
+        position: absolute;
+        top: 0;
+        right: -40px;
+        font-size: 50px;
+        line-height: 25px;
+        color: $text-color1;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+            color: black;
+        }
+        &:active {
+            color: $text-color1;
+        }
+    }
+    &__wrapper {
+        position: relative;
+        margin-top: 50px;
+        padding: 30px;
+        border: 1px solid $bg-color2;
+        border-radius: 8px;
+        background-color: $bg-color1;
+        height: 560px;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 10px;
+            background-color: $bg-color1;
+            border-radius: 0 8px 8px 0;
+        }
+        &::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: $bg-color2;
+        }
+        &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            background-color: $bg-color1;
+        }
+    }
+    &__empty {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+    }
+    &__title {
+        font-style: italic;
+        font-weight: 600;
+        text-align: center;
+    }
+    &__img {
+        display: block;
+        width: 200px;
+        margin: 25px auto 25px auto;  
+    }
+    &__btn {
+        width: 180px;
+        display: block;
+        margin: 0 auto;
+    }
+    &__block {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 8px;
+        border: 1px solid #cfcfcf;
+        padding: 10px;
+        margin-bottom: 17px;
+        transition: all .5s;
+        cursor: pointer;
+        &:hover {
+            border: 1px solid $bg-color1;
+            box-shadow: 0 1px 24px 0 $bg-shadow;
+        }
+        &-close {
+            position: absolute;
+            color: $text-color3;
+            right: 10px;
+            top: 10px;
+            font-size: 40px;
+            line-height: 20px;
+            transition: all .2s;
+            &:hover {
+                color: $text-color4;
+            }
+        }
+    }
+    &__flex {
+        display: flex;
+    }
+    &__left {
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+        border: 1px solid #cfcfcf;
+        margin-right: 20px;
+        img {
+            width: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+    }
+    &__right {
+        position: relative;
+        &-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+        }
+    }
+    &__warehouse {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        font-size: 14px;
+        font-weight: 600;
+        color: $text-color3;
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 22px;
+        text-align: center;
+        color: #0d1116;
+        font-style: normal;
+    }
+    &__firm {
+        margin-top: 5px;
+        font-size: 14px;
+        color: $text-color4;
+    }
+    &__price {
+        display: flex;
+        align-items: flex-end;
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        &-old {
+            margin-right: 15px;
+            font-size: 16px;
+            color: $text-color4;
+            text-decoration-line: line-through;
+        }
+        &-new {
+            font-weight: 700;
+            font-size: 22px;
+            color: $text-color3;
+        }
+    }
+}

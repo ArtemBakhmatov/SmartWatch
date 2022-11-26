@@ -273,43 +273,6 @@ function menuCardChildren() {
             }
         });
 
-        /////////////////////////// modal ////////////////////////////
-        const modalCard = document.querySelector('.modalCard'),
-               closeBtn = document.querySelector('.modalCard__close');
-
-        function hideModalCard() {
-            modalCard.classList.add('hide');
-            modalCard.classList.remove('show', 'fade');
-            document.body.style.overflow = '';
-        }
-        hideModalCard();
-
-        function showModalCard() {
-            modalCard.classList.remove('hide');
-            modalCard.classList.add('show', 'fade');
-            document.body.style.overflow = 'hidden';
-        }
-
-        document.querySelector('.hits__content-children').addEventListener('click', (event) => {
-            if(event.target && event.target.classList.contains('hits__item-bottom__btn')) {
-                showModalCard();
-            }
-        });
-
-        closeBtn.addEventListener('click', hideModalCard);
-
-        modalCard.addEventListener('click', (event) => {
-            if(event.target === modalCard) {
-                hideModalCard();
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if(event.code === 'Escape' && modalCard.classList.contains('show')) {
-                hideModalCard();
-            }
-        }); 
-
     }
 
     menuCardRender(
@@ -319,7 +282,7 @@ function menuCardChildren() {
         'img/cards/children/wonlex/KT17/blue.jpeg',
         4,
         6,
-        'Детские смарт-часы KT22 «4G»',
+        'Детские смарт-часы KT17 «4G»',
         'Черные',
         'Розовые', 
         'Голубые',
