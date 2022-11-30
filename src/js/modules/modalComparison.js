@@ -29,6 +29,12 @@ function modalComparison() {
             hideModalComparison();
         }
     }); 
+
+    const btnComparison = document.createElement('button');
+    btnComparison.classList.add('btn', 'modalComparison__btn-bottom');
+    btnComparison.textContent = 'Сравнить';
+    document.querySelector('.modalComparison__wrapper').append(btnComparison);
+
 }
 
 export {modalComparison};

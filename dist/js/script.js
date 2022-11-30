@@ -96,12 +96,23 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "menuCardChildren", function() { return menuCardChildren; });
+
 function menuCardChildren() {
-    function menuCardRender(hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3) {
-    ///////////////////////////// HTML /////////////////////////////////
+    function menuCardRender(hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3, availability, numberProductCards) {
+    ///////////////////////////// КАРТОЧКА ТОВАРА /////////////////////////////////
         const div = document.createElement('div');
         div.classList.add('hits__product');
-        
+
+        const comparisonTitleModal = document.createElement('div');
+        comparisonTitleModal.classList.add('hits__product-modal');
+        comparisonTitleModal.textContent = `Добавлено в cравнение`;
+        div.prepend(comparisonTitleModal);
+
+        const favouritesTitleModal = document.createElement('div');
+        favouritesTitleModal.classList.add('hits__product-modal');
+        favouritesTitleModal.textContent = `Добавлено в избранное`;
+        div.prepend(favouritesTitleModal);
+                
         const item = document.createElement('div');
         item.classList.add('hits__item');
         div.append(item);
@@ -148,22 +159,30 @@ function menuCardChildren() {
 
         const btnLeft1 = document.createElement('div');
         btnLeft1.classList.add('hits__item-btn');
+        btnLeft1.setAttribute('id', 'comparison__btn');
         btnLeft1.innerHTML = `
             <div class="hits__item-btn__title">
                 Добавить в сравнение
             </div>
-            <div class="hits__item-btn__img">
-                <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.82051C2 3.26279 3.26279 2 4.82051 2C6.37824 2 7.64103 3.26279 7.64103 4.82051V19.1795C7.64103 20.7372 6.37824 22 4.82051 22C3.26279 22 2 20.7372 2 19.1795V4.82051ZM4.82051 3.53846C4.11246 3.53846 3.53846 4.11246 3.53846 4.82051V19.1795C3.53846 19.8875 4.11246 20.4615 4.82051 20.4615C5.52857 20.4615 6.10256 19.8875 6.10256 19.1795V4.82051C6.10256 4.11246 5.52857 3.53846 4.82051 3.53846Z" fill="#AFAFAF"></path>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.17949 9.94872C9.17949 8.39099 10.4423 7.12821 12 7.12821C13.5577 7.12821 14.8205 8.39099 14.8205 9.94872V19.1795C14.8205 20.7372 13.5577 22 12 22C10.4423 22 9.17949 20.7372 9.17949 19.1795V9.94872ZM12 8.66667C11.2919 8.66667 10.7179 9.24066 10.7179 9.94872V19.1795C10.7179 19.8875 11.2919 20.4615 12 20.4615C12.7081 20.4615 13.2821 19.8875 13.2821 19.1795V9.94872C13.2821 9.24066 12.7081 8.66667 12 8.66667Z" fill="#AFAFAF"></path>
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.359 4.82051C16.359 3.26279 17.6218 2 19.1795 2C20.7372 2 22 3.26279 22 4.82051V19.1795C22 20.7372 20.7372 22 19.1795 22C17.6218 22 16.359 20.7372 16.359 19.1795V4.82051ZM19.1795 3.53846C18.4714 3.53846 17.8974 4.11246 17.8974 4.82051V19.1795C17.8974 19.8875 18.4714 20.4615 19.1795 20.4615C19.8875 20.4615 20.4615 19.8875 20.4615 19.1795V4.82051C20.4615 4.11246 19.8875 3.53846 19.1795 3.53846Z" fill="#AFAFAF"></path>
-                </svg>
-            </div>
+            
         `;
         btnsLeft.append(btnLeft1);
 
+        const btnlLeftImg1 = document.createElement('div');
+        btnlLeftImg1.classList.add('hits__item-btn__img');
+        btnlLeftImg1.setAttribute('id', 'comparison__img');
+        btnlLeftImg1.innerHTML =`
+            <svg width="24px" height="24px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M2 4.82051C2 3.26279 3.26279 2 4.82051 2C6.37824 2 7.64103 3.26279 7.64103 4.82051V19.1795C7.64103 20.7372 6.37824 22 4.82051 22C3.26279 22 2 20.7372 2 19.1795V4.82051ZM4.82051 3.53846C4.11246 3.53846 3.53846 4.11246 3.53846 4.82051V19.1795C3.53846 19.8875 4.11246 20.4615 4.82051 20.4615C5.52857 20.4615 6.10256 19.8875 6.10256 19.1795V4.82051C6.10256 4.11246 5.52857 3.53846 4.82051 3.53846Z" fill="#AFAFAF"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M9.17949 9.94872C9.17949 8.39099 10.4423 7.12821 12 7.12821C13.5577 7.12821 14.8205 8.39099 14.8205 9.94872V19.1795C14.8205 20.7372 13.5577 22 12 22C10.4423 22 9.17949 20.7372 9.17949 19.1795V9.94872ZM12 8.66667C11.2919 8.66667 10.7179 9.24066 10.7179 9.94872V19.1795C10.7179 19.8875 11.2919 20.4615 12 20.4615C12.7081 20.4615 13.2821 19.8875 13.2821 19.1795V9.94872C13.2821 9.24066 12.7081 8.66667 12 8.66667Z" fill="#AFAFAF"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.359 4.82051C16.359 3.26279 17.6218 2 19.1795 2C20.7372 2 22 3.26279 22 4.82051V19.1795C22 20.7372 20.7372 22 19.1795 22C17.6218 22 16.359 20.7372 16.359 19.1795V4.82051ZM19.1795 3.53846C18.4714 3.53846 17.8974 4.11246 17.8974 4.82051V19.1795C17.8974 19.8875 18.4714 20.4615 19.1795 20.4615C19.8875 20.4615 20.4615 19.8875 20.4615 19.1795V4.82051C20.4615 4.11246 19.8875 3.53846 19.1795 3.53846Z" fill="#AFAFAF"></path>
+            </svg>
+        `;
+        btnLeft1.append(btnlLeftImg1);
+
         const btnLeft2 = document.createElement('div');
         btnLeft2.classList.add('hits__item-btn');
+        btnLeft2.setAttribute('id', 'favourites__btn');
         btnLeft2.innerHTML = `
             <div class="hits__item-btn__title">
                 Добавить в избранное
@@ -293,6 +312,7 @@ function menuCardChildren() {
 
         const btnBasket = document.createElement('div');
         btnBasket.classList.add('hits__item-bottom__basket');
+        btnBasket.setAttribute('id', 'basket__btn');
         btnBasket.innerHTML = `
             <div class="hits__item-bottom__title">
                 Добавить в корзину
@@ -323,8 +343,475 @@ function menuCardChildren() {
         bottomWrapper.append(btnBasket); 
         
         document.querySelector('.hits__content-children').append(div);
-    ///////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////slider////////////////////////////
+
+        ///////////////////////////// КОНЕЦ КАРТОЧКИ ТОВАРА /////////////////////////////////
+
+    ////////////////////////////// КАРТОЧКА ТОВАРА В СРАВНЕНИИ ////////////////////////////////////
+        const comparisonBlock = document.createElement('div');
+        comparisonBlock.classList.add('modalComparison__block');
+        document.querySelector('.modalComparison__wrapper').append(comparisonBlock);
+
+        const comparisonClose = document.createElement('div');
+        comparisonClose.classList.add('modalComparison__block-close');
+        comparisonClose.textContent = `×`;
+        comparisonBlock.append(comparisonClose);
+
+        const comparisonPrice = document.createElement('div');
+        comparisonPrice.classList.add('modalComparison__price');
+        comparisonPrice.innerHTML = `
+            <div class="modalComparison__price-old">${priceOld}₽</div>
+            <div class="modalComparison__price-new">${priceNew}₽</div> 
+        `;
+        comparisonBlock.append(comparisonPrice);
+
+        const comparisonFlex = document.createElement('div');
+        comparisonFlex.classList.add('modalComparison__flex');
+        comparisonBlock.append(comparisonFlex);
+
+        comparisonFlex.innerHTML = `
+            <div class="modalComparison__left">
+                <img src=${image1} alt="icon">
+            </div>
+        `;
+
+        const comparisonRight = document.createElement('div');
+        comparisonRight.classList.add('modalComparison__right');
+        comparisonFlex.append(comparisonRight);
+
+        const comparisonTitle = document.createElement('div');
+        comparisonTitle.classList.add('modalComparison__title');
+        comparisonTitle.textContent = titleCard;
+        comparisonRight.append(comparisonTitle);
+
+        const comparisonRightWrapper = document.createElement('div');
+        comparisonRightWrapper.classList.add('modalComparison__right-wrapper');
+        comparisonRight.append(comparisonRightWrapper);
+
+        const comparisonRating = document.createElement('div');
+        comparisonRating.classList.add('hits__item-rating');
+        comparisonRightWrapper.append(comparisonRating);
+
+        const comparisonRatingList = document.createElement('ul');
+        comparisonRatingList.classList.add('hits__item-rating__list');
+        comparisonRating.append(comparisonRatingList);
+
+        const comparisonStarArray = [];
+        const comparisonStarQuantity = numberStars;
+
+        for(let i = 0; i <= comparisonStarQuantity - 1; i++) {
+            const comparisonStar = document.createElement('li');
+            comparisonStar.classList.add('hits__item-rating__item');
+            comparisonStar.innerHTML = `
+                <svg viewBox="0 0 40 37" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient gradientUnits="userSpaceOnUse" id="_kb11ciszh__11597">
+                            <stop stop-color="#ffa900" stop-opacity="1" offset="1"></stop>
+                            <stop stop-color="#d2d2d2" stop-opacity="1" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z" fill="url(#_kb11ciszh__11597)"></path>
+                </svg>
+            `;
+            comparisonRatingList.append(comparisonStar);
+            comparisonStarArray.push(comparisonStar);
+        }
+
+        const comparisonReviews = document.createElement('div');
+        comparisonReviews.classList.add('hits__item-reviews');
+        comparisonReviews.innerHTML = `
+            <div class="hits__item-reviews__point"></div>
+            <div class="hits__item-reviews__img">
+                <img src="icons/message-reviews.svg" alt="message">
+            </div>
+            <div class="hits__item-reviews__quantity">${numberReviews}</div>
+        `;
+        comparisonRightWrapper.append(comparisonReviews);
+
+        const comparisonFirm = document.createElement('div');
+        comparisonFirm.classList.add('modalComparison__firm');
+        comparisonFirm.textContent = `${firm} / ${children}`;
+        comparisonRight.append(comparisonFirm);
+
+        const comparisonWarehouse = document.createElement('div');
+        comparisonWarehouse.classList.add('modalComparison__warehouse');
+        comparisonWarehouse.textContent = `${availability} в наличии`;
+        comparisonRight.append(comparisonWarehouse);
+        ////////////////////////////// КОНЕЦ КАРТОЧКИ ТОВАРА В СРАВНЕНИИ ////////////////////////////////////
+
+        ////////////////////////////// КЛИК НА КНОПКУ СРАВНЕНИЕ В КАРТОЧККЕ ТОВАРА ////////////////////////////////////
+        const btns1Arr = [];
+        const btns1Quantity = numberProductCards;
+        for(let i = 0; i < btns1Quantity - 1; i++) {
+            btns1Arr.push(btnLeft1);
+        }
+        
+        const comparisonBlockArr = [];
+        const comparisonBlockQuantity = numberProductCards;
+        for(let i = 0; i < comparisonBlockQuantity - 1; i++) {
+            comparisonBlockArr.push(comparisonBlock);
+        }
+
+        function hideComparisonCard() {
+            comparisonBlock.classList.add('hide');
+            comparisonBlock.classList.remove('show', 'fade');
+        }
+        hideComparisonCard();
+
+        function showComparisonCard(i) {
+            comparisonBlockArr[i].classList.remove('hide');
+            comparisonBlockArr[i].classList.add('show', 'fade');
+        }
+
+        function hideComparisonModal() {
+            comparisonTitleModal.classList.add('hide');
+            comparisonTitleModal.classList.remove('show', 'fade');
+        }
+        hideComparisonModal();
+
+        function showComparisonModal() {
+            comparisonTitleModal.classList.remove('hide');
+            comparisonTitleModal.classList.add('show', 'fade');
+        }
+
+        let num = 0;
+
+        if(num == 0) {
+            document.querySelector('.modalComparison__empty').classList.add('show');
+            document.querySelector('.modalComparison__empty').classList.remove('hide');
+            document.querySelector('.modalComparison__btn-bottom').classList.add('hide');
+            document.querySelector('.modalComparison__btn-bottom').classList.remove('show');
+        }
+
+        document.querySelector('.hits__content-children').addEventListener('click', (event) => {
+            if(event.target && event.target.matches('div#comparison__btn')) {
+                btns1Arr.forEach((item, i) => {
+                    if(event.target === item) {
+                        hideComparisonCard();
+                        showComparisonCard(i);
+                        showComparisonModal(i);
+                        setTimeout(() => {
+                            comparisonTitleModal.classList.remove('show');
+                            comparisonTitleModal.classList.remove('fade');
+                            comparisonTitleModal.classList.add('hide');
+                        }, 2000); 
+                    }
+                });
+                document.querySelector('.header-bottom__count').textContent = `${++num}`;
+                num;
+                document.querySelector('.modalComparison__empty').classList.add('hide');
+                document.querySelector('.modalComparison__empty').classList.remove('show');
+                document.querySelector('.modalComparison__btn-bottom').classList.add('show');
+                document.querySelector('.modalComparison__btn-bottom').classList.remove('hide');
+            }   
+        }); 
+
+        ////////////////////////////// КЛИК НА КРЕСТИК В КАРТОЧККЕ ТОВАРА В СРАВНЕНИИ ////////////////////////////////////
+        const comparisonCloseArr = [];
+        const comparisonCloseQuantity = numberProductCards;
+        for(let i = 0; i < comparisonCloseQuantity - 1; i++) {
+            comparisonCloseArr.push(comparisonClose);
+        }
+
+        document.querySelector('.modalComparison__wrapper').addEventListener('click', (event) => {
+            if(event.target && event.target.classList.contains('modalComparison__block-close')) {
+                comparisonCloseArr.forEach((item, i) => {
+                    if(event.target === item) {
+                        comparisonBlockArr[i].classList.remove('show', 'fade');
+                        comparisonBlockArr[i].classList.add('hide');
+                    }
+                });
+                document.querySelector('.header-bottom__count').textContent = `${--num}`;
+                num;
+                if(num === 0) {
+                    document.querySelector('.modalComparison__empty').classList.add('show');
+                    document.querySelector('.modalComparison__empty').classList.remove('hide');
+                    document.querySelector('.modalComparison__btn-bottom').classList.add('hide');
+                    document.querySelector('.modalComparison__btn-bottom').classList.remove('show');
+                }
+            }
+        });
+
+        ////////////////////////////// КАРТОЧКА ТОВАРА В ИЗБАРННОМ ////////////////////////////////////
+        const favouritesBlock = document.createElement('div');
+        favouritesBlock.classList.add('modalComparison__block');
+        document.querySelector('.modalFavourites__wrapper').append(favouritesBlock);
+
+        const favouritesClose = document.createElement('div');
+        favouritesClose.classList.add('modalFavourites__block-close');
+        favouritesClose.textContent = `×`;
+        favouritesBlock.append(favouritesClose);
+
+        const favouritesPrice = document.createElement('div');
+        favouritesPrice.classList.add('modalFavourites__price');
+        favouritesPrice.innerHTML = `
+            <div class="modalFavourites__price-old">${priceOld}₽</div>
+            <div class="modalFavourites__price-new">${priceNew}₽</div> 
+        `;
+        favouritesBlock.append(favouritesPrice);
+
+        const favouritesFlex = document.createElement('div');
+        favouritesFlex.classList.add('modalFavourites__flex');
+        favouritesBlock.append(favouritesFlex);
+
+        favouritesFlex.innerHTML = `
+            <div class="modalFavourites__left">
+                <img src=${image1} alt="icon">
+            </div>
+        `;
+
+        const favouritesRight = document.createElement('div');
+        favouritesRight.classList.add('modalFavourites__right');
+        favouritesFlex.append(favouritesRight);
+
+        const favouritesTitle = document.createElement('div');
+        favouritesTitle.classList.add('modalFavourites__title');
+        favouritesTitle.textContent = titleCard;
+        favouritesRight.append(favouritesTitle);
+
+        const favouritesRightWrapper = document.createElement('div');
+        favouritesRightWrapper.classList.add('modalFavourites__right-wrapper');
+        favouritesRight.append(favouritesRightWrapper);
+
+        const favouritesRating = document.createElement('div');
+        favouritesRating.classList.add('hits__item-rating');
+        favouritesRightWrapper.append(favouritesRating);
+
+        const favouritesRatingList = document.createElement('ul');
+        favouritesRatingList.classList.add('hits__item-rating__list');
+        favouritesRating.append(favouritesRatingList);
+
+        const favouritesStarArray = [];
+        const favouritesStarQuantity = numberStars;
+
+        for(let i = 0; i <= favouritesStarQuantity - 1; i++) {
+            const favouritesStar = document.createElement('li');
+            favouritesStar.classList.add('hits__item-rating__item');
+            favouritesStar.innerHTML = `
+                <svg viewBox="0 0 40 37" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient gradientUnits="userSpaceOnUse" id="_kb11ciszh__11597">
+                            <stop stop-color="#ffa900" stop-opacity="1" offset="1"></stop>
+                            <stop stop-color="#d2d2d2" stop-opacity="1" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z" fill="url(#_kb11ciszh__11597)"></path>
+                </svg>
+            `;
+            favouritesRatingList.append(favouritesStar);
+            favouritesStarArray.push(favouritesStar);
+        }
+
+        const favouritesReviews = document.createElement('div');
+        favouritesReviews.classList.add('hits__item-reviews');
+        favouritesReviews.innerHTML = `
+            <div class="hits__item-reviews__point"></div>
+            <div class="hits__item-reviews__img">
+                <img src="icons/message-reviews.svg" alt="message">
+            </div>
+            <div class="hits__item-reviews__quantity">${numberReviews}</div>
+        `;
+        favouritesRightWrapper.append(favouritesReviews);
+
+        const favouritesFirm = document.createElement('div');
+        favouritesFirm.classList.add('modalFavourites__firm');
+        favouritesFirm.textContent = `${firm} / ${children}`;
+        favouritesRight.append(favouritesFirm);
+
+        const favouritesWarehouse = document.createElement('div');
+        favouritesWarehouse.classList.add('modalFavourites__warehouse');
+        favouritesWarehouse.textContent = `${availability} в наличии`;
+        favouritesRight.append(favouritesWarehouse);
+        ////////////////////////////// КОНЕЦ КАРТОЧКИ ТОВАРА В ИЗБАРННОМ ////////////////////////////////////
+
+        ////////////////////////////// КЛИК НА КНОПКУ ИЗБРАННОЕ В КАРТОЧККЕ ТОВАРА ////////////////////////////////////
+        const btns2Arr = [];
+        const btns2Quantity = numberProductCards;
+        for(let i = 0; i < btns2Quantity - 1; i++) {
+            btns2Arr.push(btnLeft2);
+        }
+        
+        const favouritesBlockArr = [];
+        const favouritesBlockQuantity = numberProductCards;
+        for(let i = 0; i < favouritesBlockQuantity - 1; i++) {
+            favouritesBlockArr.push(favouritesBlock);
+        }
+
+        function hideFavouritesCard() {
+            favouritesBlock.classList.add('hide');
+            favouritesBlock.classList.remove('show', 'fade');
+        }
+        hideFavouritesCard();
+
+        function showFavouritesCard(i) {
+            favouritesBlockArr[i].classList.remove('hide');
+            favouritesBlockArr[i].classList.add('show', 'fade');
+        }
+
+        function hideFavouritesModal() {
+            favouritesTitleModal.classList.add('hide');
+            favouritesTitleModal.classList.remove('show', 'fade');
+        }
+        hideFavouritesModal();
+
+        function showFavouritesModal() {
+            favouritesTitleModal.classList.remove('hide');
+            favouritesTitleModal.classList.add('show', 'fade');
+        }
+
+        let num2 = 0;
+
+        if(num2 == 0) {
+            document.querySelector('.modalFavourites__empty').classList.add('show');
+            document.querySelector('.modalFavourites__empty').classList.remove('hide');
+            document.querySelector('.modalFavourites__btn-bottom').classList.add('hide');
+            document.querySelector('.modalFavourites__btn-bottom').classList.remove('show');
+        }
+
+        document.querySelector('.hits__content-children').addEventListener('click', (event) => {
+            if(event.target && event.target.matches('div#favourites__btn')) {
+                btns2Arr.forEach((item, i) => {
+                    if(event.target === item) {
+                        hideFavouritesCard();
+                        showFavouritesCard(i);
+                        showFavouritesModal(i);
+                        setTimeout(() => {
+                            favouritesTitleModal.classList.remove('show');
+                            favouritesTitleModal.classList.remove('fade');
+                            favouritesTitleModal.classList.add('hide');
+                        }, 2000); 
+                    }
+                });
+                document.querySelector('#favouritesCount').textContent = `${++num2}`;
+                num2;
+                document.querySelector('.modalFavourites__empty').classList.add('hide');
+                document.querySelector('.modalFavourites__empty').classList.remove('show');
+                document.querySelector('.modalFavourites__btn-bottom').classList.add('show');
+                document.querySelector('.modalFavourites__btn-bottom').classList.remove('hide');
+            }   
+        }); 
+
+        ////////////////////////////// КЛИК НА КРЕСТИК В КАРТОЧККЕ ТОВАРА В СРАВНЕНИИ ////////////////////////////////////
+        const favouritesCloseArr = [];
+        const favouritesCloseQuantity = numberProductCards;
+        for(let i = 0; i < favouritesCloseQuantity - 1; i++) {
+            favouritesCloseArr.push(favouritesClose);
+        }
+
+        document.querySelector('.modalFavourites__wrapper').addEventListener('click', (event) => {
+            if(event.target && event.target.classList.contains('modalFavourites__block-close')) {
+                favouritesCloseArr.forEach((item, i) => {
+                    if(event.target === item) {
+                        favouritesBlockArr[i].classList.remove('show', 'fade');
+                        favouritesBlockArr[i].classList.add('hide');
+                    }
+                });
+                document.querySelector('#favouritesCount').textContent = `${--num2}`;
+                num2;
+                if(num2 === 0) {
+                    document.querySelector('.modalFavourites__empty').classList.add('show');
+                    document.querySelector('.modalFavourites__empty').classList.remove('hide');
+                    document.querySelector('.modalFavourites__btn-bottom').classList.add('hide');
+                    document.querySelector('.modalFavourites__btn-bottom').classList.remove('show');
+                }
+            }
+        });
+
+        ////////////////////////////// КАРТОЧКА ТОВАРА В КОРЗИНЕ ////////////////////////////////////
+        const basketBlock = document.createElement('div');
+        basketBlock.classList.add('modalBasket__block');
+        document.querySelector('.modalBasket__wrapper').append(basketBlock);
+
+        const basketClose = document.createElement('div');
+        basketClose.classList.add('modalBasket__block-close');
+        basketClose.textContent = `×`;
+        basketBlock.append(basketClose);
+
+        const basketPrice = document.createElement('div');
+        basketPrice.classList.add('modalBasket__price');
+        basketPrice.innerHTML = `
+            <div class="modalFavourites__price-old">${priceOld}₽</div>
+            <div class="modalFavourites__price-new">${priceNew}₽</div> 
+        `;
+        basketBlock.append(basketPrice);
+
+        const basketFlex = document.createElement('div');
+        basketFlex.classList.add('modalBasket__flex');
+        basketBlock.append(basketFlex);
+
+        basketFlex.innerHTML = `
+            <div class="modalBasket__left">
+                <img src=${image1} alt="icon">
+            </div>
+        `;
+
+        const basketRight = document.createElement('div');
+        basketRight.classList.add('modalBasket__right');
+        basketFlex.append(basketRight);
+
+        const basketTitle = document.createElement('div');
+        basketTitle.classList.add('modalBasket__title');
+        basketTitle.textContent = titleCard;
+        basketRight.append(basketTitle);
+
+        const basketRightWrapper = document.createElement('div');
+        basketRightWrapper.classList.add('modalBasket__right-wrapper');
+        basketRight.append(basketRightWrapper);
+
+        const basketRating = document.createElement('div');
+        basketRating.classList.add('hits__item-rating');
+        basketRightWrapper.append(basketRating);
+
+        const basketRatingList = document.createElement('ul');
+        basketRatingList.classList.add('hits__item-rating__list');
+        basketRating.append(basketRatingList);
+
+        const basketStarArray = [];
+        const basketStarQuantity = numberStars;
+
+        for(let i = 0; i <= basketStarQuantity - 1; i++) {
+            const basketStar = document.createElement('li');
+            basketStar.classList.add('hits__item-rating__item');
+            basketStar.innerHTML = `
+                <svg viewBox="0 0 40 37" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient gradientUnits="userSpaceOnUse" id="_kb11ciszh__11597">
+                            <stop stop-color="#ffa900" stop-opacity="1" offset="1"></stop>
+                            <stop stop-color="#d2d2d2" stop-opacity="1" offset="100%"></stop>
+                        </linearGradient>
+                    </defs>
+                    <path d="m19.1147.533962c.3614-.711949 1.409-.711949 1.7704 0l5.4156 10.644638c.1443.283.4223.479.7439.524l12.1088 1.7076c.81.1143 1.1331 1.0805.5478 1.634l-8.7633 8.2861c-.2322.2197-.3389.5373-.2833.8476l2.0679 11.7c.139.7827-.7078 1.3797-1.433 1.0097l-10.8297-5.5231c-.2878-.1467-.632-.1467-.9198 0l-10.83049 5.5231c-.72439.37-1.57126-.227-1.43225-1.0097l2.06797-11.7c.05485-.3103-.0511-.6279-.28405-.8476l-8.761789-8.2861c-.586123-.5535-.2630038-1.5197.547049-1.634l12.10946-1.7076c.3209-.045.5996-.241.7432-.524z" fill="url(#_kb11ciszh__11597)"></path>
+                </svg>
+            `;
+            basketRatingList.append(basketStar);
+            basketStarArray.push(basketStar);
+        }
+
+        const basketReviews = document.createElement('div');
+        basketReviews.classList.add('hits__item-reviews');
+        basketReviews.innerHTML = `
+            <div class="hits__item-reviews__point"></div>
+            <div class="hits__item-reviews__img">
+                <img src="icons/message-reviews.svg" alt="message">
+            </div>
+            <div class="hits__item-reviews__quantity">${numberReviews}</div>
+        `;
+        basketRightWrapper.append(basketReviews);
+
+        const basketFirm = document.createElement('div');
+        basketFirm.classList.add('modalBasket__firm');
+        basketFirm.textContent = `${firm} / ${children}`;
+        basketRight.append(basketFirm);
+
+        const basketWarehouse = document.createElement('div');
+        basketWarehouse.classList.add('modalBasket__warehouse');
+        basketWarehouse.textContent = `${availability} в наличии`;
+        basketRight.append(basketWarehouse);
+        ////////////////////////////// КОНЕЦ КАРТОЧКИ ТОВАРА В КОРЗИНЕ ////////////////////////////////////
+
+        
+
+        ///////////////////////////////////////////////////////////////////////////////////////
+        /////////////////////////// СЛАЙДЕР НА КАРТОЧКЕ ТОВАРОВ ////////////////////////////
         const imgArr = [];
         imgArr.push(img1, img2, img3);
 
@@ -375,22 +862,24 @@ function menuCardChildren() {
 
     menuCardRender(
         'new',
-        'img/cards/children/wonlex/KT17/black.jpeg',
-        'img/cards/children/wonlex/KT17/pink.jpeg',
-        'img/cards/children/wonlex/KT17/blue.jpeg',
-        4,
-        6,
-        'Детские смарт-часы KT17 «4G»',
+        'img/cards/children/wonlex/KT17/black.jpeg',    // первый слайд 
+        'img/cards/children/wonlex/KT17/pink.jpeg',     // второй слайд 
+        'img/cards/children/wonlex/KT17/blue.jpeg',     // третий слайд
+        4,                                              // количесто звезд
+        6,                                              // количество отзывов
+        'Детские смарт-часы KT17 «4G»',                 // описание товара
         'Черные',
         'Розовые', 
-        'Голубые',
-        'Wonlex',
-        'Для детей',
-        '8490',
-        '6900',
-        'black',
-        'pink',
-        'blue'
+        'Голубые',                              
+        'Wonlex',                              // фирма
+        'Для детей',                           // Для кого 
+        '8490',                                // старая цена
+        '6900',                                // новая цена
+        'black',                               // добавляем класс black
+        'pink',                                // добавляем класс pink                
+        'blue',                                // добавляем класс blue
+        'Есть',                                // Наличие
+        5                                      // количество карточек товара
     );  
     menuCardRender(
         'hit',
@@ -409,7 +898,9 @@ function menuCardChildren() {
         '7490',
         'black',
         'pink',
-        'blue'
+        'blue',
+        'Есть',
+        5
     ); 
     menuCardRender(
         'hit',
@@ -428,7 +919,9 @@ function menuCardChildren() {
         '6490',
         'black',
         'pink',
-        'blue'
+        'blue',
+        'Есть',
+        5
     ); 
     menuCardRender(
         'hit',
@@ -447,7 +940,9 @@ function menuCardChildren() {
         '3490',
         'black',
         'pink',
-        'blue'
+        'blue',
+        'Есть',
+        5
     ); 
     menuCardRender(
         'hit',
@@ -466,7 +961,9 @@ function menuCardChildren() {
         '6490',
         'black',
         'pink',
-        'blue'
+        'blue',
+        'Есть',
+        5
     );  
 }    
     
@@ -1263,6 +1760,59 @@ function menuCardGrown() {
         'opacity',
         'opacity'
     );  
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/modules/modalBasket.js":
+/*!***************************************!*\
+  !*** ./src/js/modules/modalBasket.js ***!
+  \***************************************/
+/*! exports provided: modalBasket */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalBasket", function() { return modalBasket; });
+function modalBasket() {
+    const btn = document.querySelector('#modalBasket'),
+        close = document.querySelector('.modalBasket__close'),
+        modal = document.querySelector('.modalBasket');
+
+    function hideModalBasket() {
+        modal.classList.add('hide');
+        modal.classList.remove('show', 'fade');
+        document.body.style.overflow = '';
+    }
+    hideModalBasket();
+    function showModalBasket() {
+        modal.classList.add('show', 'fade');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+    }
+
+    btn.addEventListener('click', showModalBasket);
+    close.addEventListener('click', hideModalBasket);
+
+    modal.addEventListener('click', (event) => {
+        if(event.target === modal) {
+            hideModalBasket();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if(event.code === 'Escape' && modal.classList.contains('show')) {
+            hideModalBasket();
+        }
+    }); 
+
+    const btnBasket = document.createElement('button');
+    btnBasket.classList.add('btn', 'modalFavourites__btn-bottom');
+    btnBasket.textContent = 'Купить';
+    document.querySelector('.modalBasket__wrapper').append(btnBasket);
+
 }
 
 
@@ -5360,6 +5910,65 @@ function modalComparison() {
             hideModalComparison();
         }
     }); 
+
+    const btnComparison = document.createElement('button');
+    btnComparison.classList.add('btn', 'modalComparison__btn-bottom');
+    btnComparison.textContent = 'Сравнить';
+    document.querySelector('.modalComparison__wrapper').append(btnComparison);
+
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/modules/modalFavourites.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/modalFavourites.js ***!
+  \*******************************************/
+/*! exports provided: modalFavourites */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalFavourites", function() { return modalFavourites; });
+function modalFavourites() {
+    const btn = document.querySelector('#modalFavourites'),
+        close = document.querySelector('.modalFavourites__close'),
+        modal = document.querySelector('.modalFavourites');
+
+    function hideModalFavourites() {
+        modal.classList.add('hide');
+        modal.classList.remove('show', 'fade');
+        document.body.style.overflow = '';
+    }
+    hideModalFavourites();
+    function showModalFavourites() {
+        modal.classList.add('show', 'fade');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+    }
+
+    btn.addEventListener('click', showModalFavourites);
+    close.addEventListener('click', hideModalFavourites);
+
+    modal.addEventListener('click', (event) => {
+        if(event.target === modal) {
+            hideModalFavourites();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if(event.code === 'Escape' && modal.classList.contains('show')) {
+            hideModalFavourites();
+        }
+    }); 
+
+    const btnFavourites = document.createElement('button');
+    btnFavourites.classList.add('btn', 'modalFavourites__btn-bottom');
+    btnFavourites.textContent = 'Добавить в коризину';
+    document.querySelector('.modalFavourites__wrapper').append(btnFavourites);
+
 }
 
 
@@ -5694,6 +6303,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modalCardElderly__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/modalCardElderly */ "./src/js/modules/modalCardElderly.js");
 /* harmony import */ var _modules_tabsCards__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/tabsCards */ "./src/js/modules/tabsCards.js");
 /* harmony import */ var _modules_modalComparison__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/modalComparison */ "./src/js/modules/modalComparison.js");
+/* harmony import */ var _modules_modalFavourites__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/modalFavourites */ "./src/js/modules/modalFavourites.js");
+/* harmony import */ var _modules_modalBasket__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/modalBasket */ "./src/js/modules/modalBasket.js");
+
+
 
 
 
@@ -5714,6 +6327,9 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__["offerSlider"])();
     Object(_modules_offerTimer__WEBPACK_IMPORTED_MODULE_3__["offerTimer"])();
     Object(_modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__["reviewsSlider"])();
+    Object(_modules_modalComparison__WEBPACK_IMPORTED_MODULE_12__["modalComparison"])();
+    Object(_modules_modalFavourites__WEBPACK_IMPORTED_MODULE_13__["modalFavourites"])();
+    Object(_modules_modalBasket__WEBPACK_IMPORTED_MODULE_14__["modalBasket"])();
     Object(_modules_menuCardChildren__WEBPACK_IMPORTED_MODULE_5__["menuCardChildren"])();
     Object(_modules_modalCardChildren__WEBPACK_IMPORTED_MODULE_6__["modalCardChildren"])();
     Object(_modules_menuCardGrown__WEBPACK_IMPORTED_MODULE_7__["menuCardGrown"])();
@@ -5721,7 +6337,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_9__["menuCardElderly"])();
     Object(_modules_modalCardElderly__WEBPACK_IMPORTED_MODULE_10__["modalCardElderly"])();
     Object(_modules_tabsCards__WEBPACK_IMPORTED_MODULE_11__["tabsCards"])();
-    Object(_modules_modalComparison__WEBPACK_IMPORTED_MODULE_12__["modalComparison"])();
+    
 });
 
 /***/ })

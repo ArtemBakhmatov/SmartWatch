@@ -11,6 +11,8 @@ import { menuCardElderly } from "./modules/menuCardElderly";
 import { modalCardElderly } from "./modules/modalCardElderly";
 import { tabsCards } from "./modules/tabsCards";
 import { modalComparison } from "./modules/modalComparison";
+import { modalFavourites} from "./modules/modalFavourites";
+import { modalBasket } from "./modules/modalBasket";
 
 window.addEventListener('DOMContentLoaded', () => {
     modalCatalog();
@@ -18,6 +20,9 @@ window.addEventListener('DOMContentLoaded', () => {
     offerSlider();
     offerTimer();
     reviewsSlider();
+    modalComparison();
+    modalFavourites();
+    modalBasket();
     menuCardChildren();
     modalCardChildren();
     menuCardGrown();
@@ -25,5 +30,5 @@ window.addEventListener('DOMContentLoaded', () => {
     menuCardElderly();
     modalCardElderly();
     tabsCards();
-    modalComparison();
+    
 });
