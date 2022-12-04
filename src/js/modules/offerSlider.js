@@ -40,7 +40,7 @@ function offerSlider() {
         return +width.replace(/\D/g, '');       // \D - нецифры, g - для всех знаков
     }
 
-    next.addEventListener('click', () => {
+    function nextSlider() {
         if(offset == deleteNotDigits() * (slides.length - 1)) {
             offset = 0;
         } else {
@@ -56,9 +56,9 @@ function offerSlider() {
         }
 
         setActiveDot();
-    });
+    }
 
-    prev.addEventListener('click', () => {
+    function prewSlider() {
         if(offset == 0) {
             offset = deleteNotDigits() * (slides.length - 1);
         } else {
@@ -73,7 +73,10 @@ function offerSlider() {
 
         sliderField.style.transform = `translateX(-${offset}px)`;
         setActiveDot();
-    });
+    }
+
+    next.addEventListener('click', nextSlider);
+    prev.addEventListener('click', prewSlider);
 
     dots.forEach(dot => {
         dot.addEventListener('click', (event) => {
@@ -86,6 +89,10 @@ function offerSlider() {
             setActiveDot();
         });
     });
+
+    setInterval(() => {
+        nextSlider();
+    }, 5000)
 }
 
 export {offerSlider};

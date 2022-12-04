@@ -61,6 +61,10 @@
         }
         &-img {
             border-radius: 8px;
+            transition: all 0.5s;
+            &:hover {
+                filter: blur(4px);
+            }
         }
         &-right {
             border-radius: 8px;

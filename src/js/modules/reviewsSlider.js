@@ -55,6 +55,24 @@ function reviewsSlider() {
         });
     });
 
+    setInterval(() => {
+        if(offset == deleteNotDigits() * (slides.length - 1)) {
+            offset = 0;
+        } else {
+            offset += deleteNotDigits();
+        }
+
+        sliderField.style.transform = `translateX(-${offset}px)`;
+
+        if(slideIndex == slides.length) {
+            slideIndex = 1;
+        } else {
+            slideIndex++;
+        }
+
+        setActiveDot();
+    }, 5000);
+
 }
 
 export {reviewsSlider};

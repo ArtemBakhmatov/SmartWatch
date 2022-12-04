@@ -86,6 +86,192 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/modules/consultationForm.js":
+/*!********************************************!*\
+  !*** ./src/js/modules/consultationForm.js ***!
+  \********************************************/
+/*! exports provided: consultationForm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "consultationForm", function() { return consultationForm; });
+function consultationForm() {
+    const form = document.querySelector('.consultation__form'),
+      checkbox = document.querySelector('[type="checkbox"]'),
+         modal = document.querySelector('.consultation__modal');
+
+    function closeModal() {
+        modal.classList.add('hide');
+        modal.classList.remove('show', 'fide');
+    }
+    closeModal();
+
+    function openModal() {
+        modal.classList.add('show', 'fide');
+        modal.classList.remove('hide');
+    }
+
+    const message = {
+        loading: 'icons/spinner.svg',
+        success: 'Спасибо, скоро мы с вами свяжемся',
+        failure: 'Что-то пошло не так...',
+        imgThanks: 'icons/thanks.gif',
+        imgError: 'icons/error.gif'
+    };
+
+    const postData = async (url, data) => {
+        const res = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: data
+        });
+        return await res.json();
+    }
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const statusMessage = document.createElement('img');
+        statusMessage.src = message.loading;
+        statusMessage.style.cssText = `
+            display: block;
+            margin: 0 auto;
+        `;
+        form.insertAdjacentElement('afterend', statusMessage);
+
+        const formData = new FormData(form);
+
+        const json = JSON.stringify(Object.fromEntries(formData.entries()));
+        // entries() -> превращает в массив массивов ([['a', 5]])
+        // Object.fromEntries() -> превращает в объект {a: 5}
+
+        postData('http://localhost:3000/consultation', json)
+        .then(data => {
+            console.log(data);
+            showThanksModal(message.success, message.imgThanks);
+            statusMessage.remove();
+        }).catch(() => {
+            showThanksModal(message.failure, message.imgError);
+            statusMessage.remove();
+        }).finally(() => {
+            form.reset();
+        });
+    });
+
+    function showThanksModal(message, img) {
+        openModal();
+
+        const thanksModal = document.createElement('div');
+        thanksModal.classList.add('consultation__modal-wrapper');
+        thanksModal.innerHTML = `
+            <div class="consultation__modal-title">${message}</div>
+        `;
+        modal.append(thanksModal);
+        
+        const thanksGif = document.querySelector('div');
+        thanksGif.classList.add('consultation__modal-img');
+        thanksGif.classList.remove('header-top');
+        thanksGif.innerHTML = `
+            <img src=${img} alt="thanks">
+        `;
+        thanksModal.append(thanksGif);
+
+        setTimeout(() => {
+            thanksModal.remove();
+            closeModal();
+        }, 3000);
+    }
+
+    // fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    //     method: 'POST',                         // метод
+    //     body: JSON.stringify({name: 'Alex'}),   // что отправляем
+    //     Headers: {                              // заголовок
+    //         'Content-type': 'application/json'
+    //     }
+    // })
+    // .then(response => response.json()) // response -> ответ в json // response.json()) -> переводит в объект
+    // .then(json => console.log(json));  // объект выводится в консоли
+
+    fetch('http://localhost:3000/menu')
+        .then(data => data.json())
+        .then(res => console.log(res));
+
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/modules/maskPhone.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/maskPhone.js ***!
+  \*************************************/
+/*! exports provided: mask */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mask", function() { return mask; });
+function mask() {
+    
+    let setCursorPosition = (pos, elem) => {
+        elem.focus(); // установили фокус на элементе
+
+        if(elem.setSelectionRange) {
+            elem.setSelectionRange(pos, pos);
+        } else if (elem.createTextRange) {
+            let range = elem.createTextRange(); // диапазон
+
+            range.corange.collapse(true); //объединять граничные точки диапазона 
+            range.moveEnd('character', pos); // где будет конечная точка нашего выделения
+            range.moveStart('character', pos); // с какого символа будет начинаться выделение
+            range.select(); // объеденяет сразу moveStart и moveEnd
+           
+        }
+        // setSelectionRange() устанавливает начальное и конечное положение выделения текста в элементе
+        // createTextRange()  текстовый диапазон нулевой и более длины 
+    };
+
+    function createMask(event) {
+        let matrix = '+7 (___) ___ __ __',
+                 i = 0,
+               def = matrix.replace(/\D/g, ''),     // если не цифры то будет путстая строка// cтатичная
+               val = this.value.replace(/\D/g, ''); // если не цифры то будет путстая строка// динам-я
+        
+        if(def.length >= val.length) {
+            val = def;
+        }
+
+        this.value = matrix.replace(/./g, function(a) {  // перебирает каждый символ
+            return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
+        });
+        // charAt возвращает символ, стоящий на указанной позиции в строке 
+
+        if(event.type === 'blur') { // пользователь перестал что то вводить
+            if(this.value.length == 2) {
+                this.value == '';
+            }
+        } else {
+            setCursorPosition(this.value.length, this);  
+            // устанавливать позицию курсора (кол-во символов в инпуте, ссылка на тот элемент который в работе)  
+        }
+    }
+
+    const inputPhone = document.querySelector('[name="phone"]');
+
+    inputPhone.addEventListener('input', createMask);
+    inputPhone.addEventListener('focus', createMask);
+    inputPhone.addEventListener('blur', createMask);
+
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/menuCardChildren.js":
 /*!********************************************!*\
   !*** ./src/js/modules/menuCardChildren.js ***!
@@ -112,6 +298,11 @@ function menuCardChildren() {
         favouritesTitleModal.classList.add('hits__product-modal');
         favouritesTitleModal.textContent = `Добавлено в избранное`;
         div.prepend(favouritesTitleModal);
+
+        const basketTitleModal = document.createElement('div');
+        basketTitleModal.classList.add('hits__product-modal');
+        basketTitleModal.textContent = `Добавлено в коризину`;
+        div.prepend(basketTitleModal);
                 
         const item = document.createElement('div');
         item.classList.add('hits__item');
@@ -808,7 +999,99 @@ function menuCardChildren() {
         basketRight.append(basketWarehouse);
         ////////////////////////////// КОНЕЦ КАРТОЧКИ ТОВАРА В КОРЗИНЕ ////////////////////////////////////
 
+        ////////////////////////////// КЛИК НА КНОПКУ КОРЗИНА В КАРТОЧККЕ ТОВАРА ////////////////////////////////////
+        const btns3Arr = [];
+        const btns3Quantity = numberProductCards;
+        for(let i = 0; i < btns3Quantity - 1; i++) {
+            btns3Arr.push(btnBasket);
+        }
         
+        const basketBlockArr = [];
+        const basketBlockQuantity = numberProductCards;
+        for(let i = 0; i < basketBlockQuantity - 1; i++) {
+            basketBlockArr.push(basketBlock);
+        }
+
+        function hideBasketCard() {
+            basketBlock.classList.add('hide');
+            basketBlock.classList.remove('show', 'fade');
+        }
+        hideBasketCard();
+
+        function showBasketCard(i) {
+            basketBlockArr[i].classList.remove('hide');
+            basketBlockArr[i].classList.add('show', 'fade');
+        }
+
+        function hideBasketModal() {
+            basketTitleModal.classList.add('hide');
+            basketTitleModal.classList.remove('show', 'fade');
+        }
+        hideBasketModal();
+
+        function showBasketModal() {
+            basketTitleModal.classList.remove('hide');
+            basketTitleModal.classList.add('show', 'fade');
+        }
+
+        let num3 = 0;
+
+        if(num3 == 0) {
+            document.querySelector('.modalBasket__empty').classList.add('show');
+            document.querySelector('.modalBasket__empty').classList.remove('hide');
+            document.querySelector('.modalBasket__btn-bottom').classList.add('hide');
+            document.querySelector('.modalBasket__btn-bottom').classList.remove('show');
+        }
+
+        document.querySelector('.hits__content-children').addEventListener('click', (event) => {
+            if(event.target && event.target.matches('div#basket__btn')) {
+                btns3Arr.forEach((item, i) => {
+                    if(event.target === item) {
+                        hideBasketCard();
+                        showBasketCard(i);
+                        showBasketModal(i);
+                        setTimeout(() => {
+                            basketTitleModal.classList.remove('show');
+                            basketTitleModal.classList.remove('fade');
+                            basketTitleModal.classList.add('hide');
+                        }, 2000); 
+                    }
+                });
+                document.querySelector('#basketCount').textContent = `${++num3}`;
+                num2;
+                document.querySelector('.modalBasket__empty').classList.add('hide');
+                document.querySelector('.modalBasket__empty').classList.remove('show');
+                document.querySelector('.modalBasket__btn-bottom').classList.add('show');
+                document.querySelector('.modalBasket__btn-bottom').classList.remove('hide');
+            }   
+        }); 
+
+        ////////////////////////////// КЛИК НА КРЕСТИК В КАРТОЧККЕ ТОВАРА В КОРЗИНЕ ////////////////////////////////////
+        const basketCloseArr = [];
+        const basketCloseQuantity = numberProductCards;
+        for(let i = 0; i < basketCloseQuantity - 1; i++) {
+            basketCloseArr.push(basketClose);
+        }
+
+        document.querySelector('.modalBasket__wrapper').addEventListener('click', (event) => {
+            if(event.target && event.target.classList.contains('modalBasket__block-close')) {
+                basketCloseArr.forEach((item, i) => {
+                    if(event.target === item) {
+                        basketBlockArr[i].classList.remove('show', 'fade');
+                        basketBlockArr[i].classList.add('hide');
+                    }
+                });
+                document.querySelector('#basketCount').textContent = `${--num3}`;
+                num3;
+                if(num3 === 0) {
+                    document.querySelector('.modalBasket__empty').classList.add('show');
+                    document.querySelector('.modalBasket__empty').classList.remove('hide');
+                    document.querySelector('.modalBasket__btn-bottom').classList.add('hide');
+                    document.querySelector('.modalBasket__btn-bottom').classList.remove('show');
+                }
+            }
+        });
+
 
         ///////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////// СЛАЙДЕР НА КАРТОЧКЕ ТОВАРОВ ////////////////////////////
@@ -1809,7 +2092,7 @@ function modalBasket() {
     }); 
 
     const btnBasket = document.createElement('button');
-    btnBasket.classList.add('btn', 'modalFavourites__btn-bottom');
+    btnBasket.classList.add('btn', 'modalBasket__btn-bottom');
     btnBasket.textContent = 'Купить';
     document.querySelector('.modalBasket__wrapper').append(btnBasket);
 
@@ -6027,7 +6310,7 @@ function offerSlider() {
         return +width.replace(/\D/g, '');       // \D - нецифры, g - для всех знаков
     }
 
-    next.addEventListener('click', () => {
+    function nextSlider() {
         if(offset == deleteNotDigits() * (slides.length - 1)) {
             offset = 0;
         } else {
@@ -6043,9 +6326,9 @@ function offerSlider() {
         }
 
         setActiveDot();
-    });
+    }
 
-    prev.addEventListener('click', () => {
+    function prewSlider() {
         if(offset == 0) {
             offset = deleteNotDigits() * (slides.length - 1);
         } else {
@@ -6060,7 +6343,10 @@ function offerSlider() {
 
         sliderField.style.transform = `translateX(-${offset}px)`;
         setActiveDot();
-    });
+    }
+
+    next.addEventListener('click', nextSlider);
+    prev.addEventListener('click', prewSlider);
 
     dots.forEach(dot => {
         dot.addEventListener('click', (event) => {
@@ -6073,6 +6359,10 @@ function offerSlider() {
             setActiveDot();
         });
     });
+
+    setInterval(() => {
+        nextSlider();
+    }, 5000)
 }
 
 
@@ -6090,7 +6380,7 @@ function offerSlider() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "offerTimer", function() { return offerTimer; });
 function offerTimer() {
-    const deadline = '2022-11-14';    // время в будущем
+    const deadline = '2022-12-14';    // время в будущем
 
     function getTimerRemaining(endtime) {  // получить оставшийся таймер (разница между deadline и наст. время)
         let days, hours, minutes, seconds;
@@ -6224,6 +6514,77 @@ function reviewsSlider() {
         });
     });
 
+    setInterval(() => {
+        if(offset == deleteNotDigits() * (slides.length - 1)) {
+            offset = 0;
+        } else {
+            offset += deleteNotDigits();
+        }
+
+        sliderField.style.transform = `translateX(-${offset}px)`;
+
+        if(slideIndex == slides.length) {
+            slideIndex = 1;
+        } else {
+            slideIndex++;
+        }
+
+        setActiveDot();
+    }, 5000);
+
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/modules/scrolling.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/scrolling.js ***!
+  \*************************************/
+/*! exports provided: scrolling */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrolling", function() { return scrolling; });
+function scrolling() {
+
+    let links = document.querySelectorAll('[href^="#"]'),
+        speed = 0.3;
+    
+    links.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+
+            let widthTop = document.documentElement.scrollTop,
+                hash = this.hash,
+                toBlock = document.querySelector(hash).getBoundingClientRect().top,
+                start = null;
+
+            requestAnimationFrame(step);
+
+            function step(time) {
+                if (start === null) {
+                    start = time;
+                }
+
+                let progress = time - start,
+                    r = (toBlock < 0 ? Math.max(widthTop - progress/speed, widthTop + toBlock) : Math.min(widthTop + progress/speed, widthTop + toBlock));
+
+                    document.documentElement.scrollTo(0, r);
+
+                if (r != widthTop + toBlock) {
+                    requestAnimationFrame(step);
+                } else {
+                    location.hash = hash;
+                }
+            }
+        });
+    });
+
+
+    
 }
 
 
@@ -6281,6 +6642,49 @@ function tabsCards() {
 
 /***/ }),
 
+/***/ "./src/js/modules/validationInputs.js":
+/*!********************************************!*\
+  !*** ./src/js/modules/validationInputs.js ***!
+  \********************************************/
+/*! exports provided: validationInputs */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validationInputs", function() { return validationInputs; });
+function validationInputs() {
+    const inputName = document.querySelector('[name="name"]'),
+         inputPhone = document.querySelector('[name="phone"]');
+
+    inputName.addEventListener('keypress', (e) => {
+        if(e.key.match(/[^а-яё]/ig)) {
+            e.preventDefault();
+        }
+    });
+    // 'keypress' - отслеживание, пользователь нажал на определенную клавишу
+    // [] диапазон, ^ - начало строки, i - любой регистр, g - все знаки
+
+    inputName.addEventListener('input', () => {
+        if(inputName.value.length < 4) {
+            inputName.style.border = '1px solid red';
+        } else {
+            inputName.style.border = 'none';
+        }
+    });
+
+    inputPhone.addEventListener('input', () => {
+        if(inputPhone.value.length <= 17) {
+            inputPhone.style.border = '1px solid red';
+        } else {
+            inputPhone.style.border = 'none';
+        }
+    });
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/script.js":
 /*!**************************!*\
   !*** ./src/js/script.js ***!
@@ -6305,6 +6709,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_modalComparison__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/modalComparison */ "./src/js/modules/modalComparison.js");
 /* harmony import */ var _modules_modalFavourites__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/modalFavourites */ "./src/js/modules/modalFavourites.js");
 /* harmony import */ var _modules_modalBasket__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/modalBasket */ "./src/js/modules/modalBasket.js");
+/* harmony import */ var _modules_consultationForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/consultationForm */ "./src/js/modules/consultationForm.js");
+/* harmony import */ var _modules_maskPhone__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/maskPhone */ "./src/js/modules/maskPhone.js");
+/* harmony import */ var _modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/validationInputs */ "./src/js/modules/validationInputs.js");
+/* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
+
+
+
+
+
 
 
 
@@ -6337,7 +6750,10 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_9__["menuCardElderly"])();
     Object(_modules_modalCardElderly__WEBPACK_IMPORTED_MODULE_10__["modalCardElderly"])();
     Object(_modules_tabsCards__WEBPACK_IMPORTED_MODULE_11__["tabsCards"])();
-    
+    Object(_modules_consultationForm__WEBPACK_IMPORTED_MODULE_15__["consultationForm"])();
+    Object(_modules_maskPhone__WEBPACK_IMPORTED_MODULE_16__["mask"])();
+    Object(_modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__["validationInputs"])();
+    Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_18__["scrolling"])();
 });
 
 /***/ })

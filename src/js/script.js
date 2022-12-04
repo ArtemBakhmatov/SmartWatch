@@ -13,6 +13,11 @@ import { tabsCards } from "./modules/tabsCards";
 import { modalComparison } from "./modules/modalComparison";
 import { modalFavourites} from "./modules/modalFavourites";
 import { modalBasket } from "./modules/modalBasket";
+import { consultationForm } from "./modules/consultationForm";
+import { mask } from "./modules/maskPhone";
+import { validationInputs } from "./modules/validationInputs";
+import { scrolling } from "./modules/scrolling";
+
 
 window.addEventListener('DOMContentLoaded', () => {
     modalCatalog();
@@ -30,5 +35,8 @@ window.addEventListener('DOMContentLoaded', () => {
     menuCardElderly();
     modalCardElderly();
     tabsCards();
-    
+    consultationForm();
+    mask();
+    validationInputs();
+    scrolling();
 });

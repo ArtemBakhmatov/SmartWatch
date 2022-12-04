@@ -14,6 +14,11 @@ function menuCardChildren() {
         favouritesTitleModal.classList.add('hits__product-modal');
         favouritesTitleModal.textContent = `Добавлено в избранное`;
         div.prepend(favouritesTitleModal);
+
+        const basketTitleModal = document.createElement('div');
+        basketTitleModal.classList.add('hits__product-modal');
+        basketTitleModal.textContent = `Добавлено в коризину`;
+        div.prepend(basketTitleModal);
                 
         const item = document.createElement('div');
         item.classList.add('hits__item');
@@ -710,7 +715,99 @@ function menuCardChildren() {
         basketRight.append(basketWarehouse);
         ////////////////////////////// КОНЕЦ КАРТОЧКИ ТОВАРА В КОРЗИНЕ ////////////////////////////////////
 
+        ////////////////////////////// КЛИК НА КНОПКУ КОРЗИНА В КАРТОЧККЕ ТОВАРА ////////////////////////////////////
+        const btns3Arr = [];
+        const btns3Quantity = numberProductCards;
+        for(let i = 0; i < btns3Quantity - 1; i++) {
+            btns3Arr.push(btnBasket);
+        }
         
+        const basketBlockArr = [];
+        const basketBlockQuantity = numberProductCards;
+        for(let i = 0; i < basketBlockQuantity - 1; i++) {
+            basketBlockArr.push(basketBlock);
+        }
+
+        function hideBasketCard() {
+            basketBlock.classList.add('hide');
+            basketBlock.classList.remove('show', 'fade');
+        }
+        hideBasketCard();
+
+        function showBasketCard(i) {
+            basketBlockArr[i].classList.remove('hide');
+            basketBlockArr[i].classList.add('show', 'fade');
+        }
+
+        function hideBasketModal() {
+            basketTitleModal.classList.add('hide');
+            basketTitleModal.classList.remove('show', 'fade');
+        }
+        hideBasketModal();
+
+        function showBasketModal() {
+            basketTitleModal.classList.remove('hide');
+            basketTitleModal.classList.add('show', 'fade');
+        }
+
+        let num3 = 0;
+
+        if(num3 == 0) {
+            document.querySelector('.modalBasket__empty').classList.add('show');
+            document.querySelector('.modalBasket__empty').classList.remove('hide');
+            document.querySelector('.modalBasket__btn-bottom').classList.add('hide');
+            document.querySelector('.modalBasket__btn-bottom').classList.remove('show');
+        }
+
+        document.querySelector('.hits__content-children').addEventListener('click', (event) => {
+            if(event.target && event.target.matches('div#basket__btn')) {
+                btns3Arr.forEach((item, i) => {
+                    if(event.target === item) {
+                        hideBasketCard();
+                        showBasketCard(i);
+                        showBasketModal(i);
+                        setTimeout(() => {
+                            basketTitleModal.classList.remove('show');
+                            basketTitleModal.classList.remove('fade');
+                            basketTitleModal.classList.add('hide');
+                        }, 2000); 
+                    }
+                });
+                document.querySelector('#basketCount').textContent = `${++num3}`;
+                num2;
+                document.querySelector('.modalBasket__empty').classList.add('hide');
+                document.querySelector('.modalBasket__empty').classList.remove('show');
+                document.querySelector('.modalBasket__btn-bottom').classList.add('show');
+                document.querySelector('.modalBasket__btn-bottom').classList.remove('hide');
+            }   
+        }); 
+
+        ////////////////////////////// КЛИК НА КРЕСТИК В КАРТОЧККЕ ТОВАРА В КОРЗИНЕ ////////////////////////////////////
+        const basketCloseArr = [];
+        const basketCloseQuantity = numberProductCards;
+        for(let i = 0; i < basketCloseQuantity - 1; i++) {
+            basketCloseArr.push(basketClose);
+        }
+
+        document.querySelector('.modalBasket__wrapper').addEventListener('click', (event) => {
+            if(event.target && event.target.classList.contains('modalBasket__block-close')) {
+                basketCloseArr.forEach((item, i) => {
+                    if(event.target === item) {
+                        basketBlockArr[i].classList.remove('show', 'fade');
+                        basketBlockArr[i].classList.add('hide');
+                    }
+                });
+                document.querySelector('#basketCount').textContent = `${--num3}`;
+                num3;
+                if(num3 === 0) {
+                    document.querySelector('.modalBasket__empty').classList.add('show');
+                    document.querySelector('.modalBasket__empty').classList.remove('hide');
+                    document.querySelector('.modalBasket__btn-bottom').classList.add('hide');
+                    document.querySelector('.modalBasket__btn-bottom').classList.remove('show');
+                }
+            }
+        });
+
 
         ///////////////////////////////////////////////////////////////////////////////////////
         /////////////////////////// СЛАЙДЕР НА КАРТОЧКЕ ТОВАРОВ ////////////////////////////

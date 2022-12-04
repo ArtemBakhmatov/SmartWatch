@@ -4,6 +4,9 @@
     height: 98px;
     &-top {
         background: $bg-theme;
+        position: fixed;
+        width: 100%;
+        z-index: 5;
         &__wrapper {
             position: relative;
             height: 33px;
@@ -206,7 +209,7 @@
 
             }
             &-active {
-                z-index: 1;
+                z-index: 2;
                 opacity: 1;
                 height: 125px;
                 padding: 5px 10px;
@@ -214,6 +217,7 @@
         }
     }
     &-bottom {
+        padding-top: 33px;
         &__wrapper {
             height: 64px;
             display: flex;
@@ -223,7 +227,7 @@
         &__left {
             position: relative;
             z-index: 0;
-            width: 186px;
+            width: 190px;
             height: 48px;
             border-radius: 10px;
             overflow: hidden;
@@ -460,7 +464,7 @@
         &__active {
             top: 10px;
             opacity: 1;
-            z-index: 1;
+            z-index: 2;
         }
 
         &__wrapper {

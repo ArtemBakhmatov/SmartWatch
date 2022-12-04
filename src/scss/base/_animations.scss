@@ -33,3 +33,19 @@
 	  opacity: 1;
 	}
   }
+@keyframes animation {
+	from {
+		color: $bg-color1;
+		text-shadow: 1px 1px 3px $bg-color2;
+	}
+
+	50% {
+		color: $bg-color2;
+		text-shadow: 1px 1px 3px white;
+	}
+
+	to {
+		color: $text-color1;
+		text-shadow: 1px 1px 3px $bg-color2;
+	}
+}

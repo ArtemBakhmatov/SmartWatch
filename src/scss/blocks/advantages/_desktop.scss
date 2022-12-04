@@ -1,5 +1,12 @@
 .advantages {
     background-color: $bg-color3;
+    &__title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 32px;
+        line-height: 32px;
+        color: $text-color2;
+    }
     &__wrapper {
         display: flex;
         justify-content: space-around;

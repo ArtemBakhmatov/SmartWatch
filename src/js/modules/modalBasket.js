@@ -31,7 +31,7 @@ function modalBasket() {
     }); 
 
     const btnBasket = document.createElement('button');
-    btnBasket.classList.add('btn', 'modalFavourites__btn-bottom');
+    btnBasket.classList.add('btn', 'modalBasket__btn-bottom');
     btnBasket.textContent = 'Купить';
     document.querySelector('.modalBasket__wrapper').append(btnBasket);
 
