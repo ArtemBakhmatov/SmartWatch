@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .header {
+        &-top {
+            &__wrapper {
+                width: 70%;
+            }
+            &__modal {
+                left: 55px;
+                top: 140px;
+            }
+        }
+        &-bottom {
+            &__right {
+                width: 520px;
+            }
+            &__left {
+                width: 133px;
+                height: 40px;
+            }
+            &__brend {
+                font-size: 14px;
+                line-height: 14px;
+            }
+            &__logo {
+                width: 25px;
+                height: 25px;
+            }
+            &__form {
+                width: 300px;
+                margin-left: 25px;
+            }
+            &__catalog {
+                left: 22%;
+            }
+        }
+        &-catalog {
+            &__active {
+                left: 50px;
+            }
+        }
+    }
+}

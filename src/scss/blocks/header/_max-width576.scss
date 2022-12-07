@@ -1,0 +1,41 @@
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .header {
+        height: 100px;
+        &-top {
+            &__wrapper {
+                width: 85%;
+            }
+        }
+        &-bottom {
+            margin-top: -8px;
+            padding-top: 1px;
+            &__form {
+                position: absolute;
+                margin-left: 0;
+                top: 55px;
+                width: 97%;
+            }
+            &__right {
+                width: 97%;
+                padding: 5px 0 20px 0;
+                bottom: 5px;
+            }
+            &__title {
+                border: none;
+                background-color: rgba($color: $bg-color3, $alpha: 0.0);
+                top: 40px;
+            }
+            &__user {
+                width: 40px;
+                height: 40px;
+            }
+            &__catalog {
+                left: 27%;
+            }
+        }
+    }
+}

@@ -2,4 +2,46 @@
     .container {
         max-width: 960px;
     }
+    .header {
+        &-top {
+            &__address {
+                &-city {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+            &__link {
+                font-size: 13px;
+                line-height: 13px;
+            }
+            &__phone {
+                &-wrapper {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+                &-link {
+                    font-size: 12px;
+                    line-height: 12px;
+                }
+            }
+        }
+        &-bottom {
+            &__left {
+                width: 168px;
+                height: 45px;
+            }
+            &__logo {
+                width: 30px;
+                height: 30px;   
+            }
+            &__brend {
+                font-size: 18px;
+                line-height: 18px;
+            }
+            &__form {
+                width: 375px;
+            }
+        }
+    }
+    
 }   

@@ -1,0 +1,52 @@
+@media (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .header {
+        &-top {
+            &__address {
+                &-city {
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+            }
+            &__link {
+                font-size: 18px;
+                line-height: 18px;
+            }
+            &__phone {
+                &-wrapper {
+                    font-size: 12px;
+                    line-height: 12px;  
+                }
+                &-link {
+                    font-size: 14px;
+                    line-height: 14px;
+                }
+            }
+            &__modal {
+                left: 5px;
+                width: 285px;
+            }
+        }
+        &-catalog {
+            &__wrapper {
+                width: 200px;
+            }
+            &__title {
+                font-size: 18px;
+            }
+            &__link {
+                font-size: 15px;
+                line-height: 15px;
+            }
+        }
+        &-bottom {
+            &__title {
+                font-size: 10px;
+                line-height: 10px;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+    .offer {
+        &__slide {
+            &-title {
+                left: 85px;
+            }
+        }
+        &__slider {
+            &-block {
+                width: 950px;
+            }
+        }
+    }
+}   

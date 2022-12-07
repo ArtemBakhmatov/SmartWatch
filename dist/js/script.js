@@ -205,6 +205,61 @@ function consultationForm() {
 
 /***/ }),
 
+/***/ "./src/js/modules/hamburger.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/hamburger.js ***!
+  \*************************************/
+/*! exports provided: hamburger */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "hamburger", function() { return hamburger; });
+function hamburger() {
+    const hamburger = document.querySelector('.header__hamburger'),
+         btnCatalog = document.querySelector('.header-bottom__catalog'),
+               menu = document.querySelector('.header-top__wrapper'),
+      headerCatalog = document.querySelector('.header-catalog'),
+       btnHamburger = document.querySelector('.header-bottom__hamburger'),
+      linkIconArrow = document.querySelector('.header-top__link-icon'),
+     headerTopModal = document.querySelector('.header-top__modal'),
+          linksItem = document.querySelectorAll('.btnMenu');
+
+    function openMenu() {
+        btnCatalog.classList.add('header-bottom__catalog-active');
+        menu.classList.add('header-top__wrapper-active');
+        hamburger.classList.add('header__hamburger-active');
+    }
+
+    function closeMenu() {
+        btnCatalog.classList.remove('header-bottom__catalog-active');
+        menu.classList.remove('header-top__wrapper-active');
+        hamburger.classList.remove('header__hamburger-active');
+        headerCatalog.classList.remove('header-catalog__active');
+        btnHamburger.classList.remove('header-bottom__hamburger-active');
+        linkIconArrow.classList.remove('header-top__link-open');
+        headerTopModal.classList.remove('header-top__modal-active');
+    }
+
+    hamburger.addEventListener('click', () => {
+        if(!btnCatalog.classList.contains('header-bottom__catalog-active') && 
+           !menu.classList.contains('header-top__wrapper-active') &&
+           !hamburger.classList.contains('header__hamburger-active')) {
+                openMenu();
+            } else {
+                closeMenu();
+            }
+    });
+
+    linksItem.forEach(item => {
+        item.addEventListener('click', closeMenu);
+    });
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/maskPhone.js":
 /*!*************************************!*\
   !*** ./src/js/modules/maskPhone.js ***!
@@ -6713,6 +6768,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_maskPhone__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/maskPhone */ "./src/js/modules/maskPhone.js");
 /* harmony import */ var _modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/validationInputs */ "./src/js/modules/validationInputs.js");
 /* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
+/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+
 
 
 
@@ -6754,6 +6811,7 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_maskPhone__WEBPACK_IMPORTED_MODULE_16__["mask"])();
     Object(_modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__["validationInputs"])();
     Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_18__["scrolling"])();
+    Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_19__["hamburger"])();
 });
 
 /***/ })

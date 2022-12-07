@@ -17,6 +17,7 @@ import { consultationForm } from "./modules/consultationForm";
 import { mask } from "./modules/maskPhone";
 import { validationInputs } from "./modules/validationInputs";
 import { scrolling } from "./modules/scrolling";
+import { hamburger } from "./modules/hamburger";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -39,4 +40,5 @@ window.addEventListener('DOMContentLoaded', () => {
     mask();
     validationInputs();
     scrolling();
+    hamburger();
 });
