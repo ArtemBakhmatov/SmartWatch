@@ -113,6 +113,7 @@
             }
             &__right {
                 position: fixed;
+                z-index: 4;
                 bottom: 10px;
                 width: 700px;
                 background-color: $bg-color1;

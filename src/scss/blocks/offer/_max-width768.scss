@@ -1,0 +1,45 @@
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .offer {
+        &__slider {
+            &-wrapper {
+                width: 520px;
+            }
+            &-block {
+                width: 390px;
+                top: 60%;
+            }
+            &-title {
+                font-size: 29px;
+                line-height: 29px;
+                top: -110px;
+            }
+            &-subtitle {
+                font-size: 25px;
+                line-height: 25px;
+            }
+            &-btn {
+                width: 205px;
+                height: 35px;
+                font-size: 11px;
+                line-height: 11px;
+            }
+            &-link {
+                font-size: 12px;
+            }
+            &-right {
+                margin-top: 70px;
+            }
+        }
+        &__slide {
+            height: 450px;
+            &-title {
+                font-size: 13px;
+                top: 66px;
+                left: 68px;
+            }
+        }
+    }
+}

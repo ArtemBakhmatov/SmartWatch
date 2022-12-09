@@ -4,8 +4,22 @@
     }
     .offer {
         &__slider {
+            &-wrapper {
+                width: 940px;
+            }
             &-block {
                 width: 800px;
+                top: 55%;
+            }
+            &-square {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        &__slide {
+            &-title {
+                top: 100px;
+                left: 70px;
             }
         }
     }

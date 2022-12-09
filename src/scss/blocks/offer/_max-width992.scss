@@ -1,0 +1,36 @@
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .offer {
+        &__slider {
+            &-wrapper {
+                width: 700px;
+            }
+            &-title {
+                font-size: 35px;
+                line-height: 35px;
+                top: -95px;
+            }
+            &-subtitle {
+                font-size: 30px;
+                line-height: 30px;
+            }
+            &-block {
+                width: 540px;
+                display: flex;
+                flex-direction: column;
+                top: 60%;
+            }
+            &-right {
+                margin-top: 20px;
+            };
+        }
+        &__slide {
+            &-title {
+                top: 62px;
+                left: 77px;
+            }
+        }
+    }
+}

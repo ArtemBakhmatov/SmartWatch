@@ -1,0 +1,12 @@
+@media (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .advantages {
+        &__title {
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+}

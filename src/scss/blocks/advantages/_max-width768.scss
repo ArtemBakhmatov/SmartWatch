@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .advantages {
+        &__item {
+            width: 160px;
+        }
+        &__title {
+            font-size: 28px;
+            line-height: 28px;
+        }
+    }
+}

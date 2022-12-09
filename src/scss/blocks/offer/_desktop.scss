@@ -29,6 +29,7 @@
         }
     }
     &__slider {
+        overflow: hidden;
         padding: 25px 0 10px 0;
         position: relative;
         &:hover {
@@ -59,7 +60,6 @@
             position: relative;
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 1px 24px 0 $bg-shadow;
             overflow: hidden;
         }
         &-inner {
