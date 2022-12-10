@@ -1,0 +1,42 @@
+@media (max-width: 576px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .consultation {
+        &__left {
+            &-title {
+                font-size: 26px;
+                line-height: 26px;
+            }
+            &-descr {
+                font-size: 12px;
+                margin-top: 15px;
+            }
+            &-phone {
+                font-size: 12px;
+            }
+        }
+        &__right {
+            width: 380px;
+            &-descr {
+                font-size: 13px;
+            }
+        }
+        &__form {
+            &-input {
+                width: 185px;
+            }
+            &-btn {
+                width: 200px;
+                height: 32px;
+            }
+            &-descr {
+                font-size: 10px;
+            }
+            &-checkbox {
+                top: 0px;
+            }
+        }
+    }
+}

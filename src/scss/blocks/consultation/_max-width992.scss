@@ -1,0 +1,22 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 720px;
+    }
+    .consultation {
+        &__content {
+            flex-direction: column;
+        }
+        &__wrapper {
+            height: 370px;
+        }
+        &__left {
+            &-title {
+                font-size: 30px;
+                line-height: 28px;
+            }
+        }
+        &__right {
+            margin-top: 35px;
+        }
+    }
+}

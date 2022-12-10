@@ -5,11 +5,11 @@
     }
     .offer {
         &__slider {
-            //width: 405px;
-            width: 100%;
+            width: 400px;
             margin: 0 auto;
             &-left {
-                width: 335px;
+                width: 280px;
+                margin-left: 10px;
             }
             &:hover {
                 .offer__slider-prev {
@@ -47,6 +47,9 @@
                     line-height: 30px;
                 }
             }
+            &-timer {
+                width: 290px;
+            }
         }
         &__slide {
             &-title {
@@ -54,6 +57,21 @@
                 top: 88px;
                 left: 60px;
             }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    .offer {
+        &__slider {
+            width: 350px;
+        }
+    }
+}
+@media (max-width: 375px) {
+    .offer {
+        &__slider {
+            width: 300px;
         }
     }
 }

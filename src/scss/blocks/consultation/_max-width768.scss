@@ -1,0 +1,13 @@
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .consultation {
+        &__left {
+            &-title {
+                font-size: 28px;
+                line-height: 28px;
+            }
+        }
+    }
+}

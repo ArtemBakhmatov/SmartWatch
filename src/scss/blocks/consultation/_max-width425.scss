@@ -1,0 +1,45 @@
+@media (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .consultation {
+        &__wrapper {
+            height: 385px;
+        }
+        &__left {
+            width: 290px;
+            &-title {
+                font-size: 24px;
+                line-height: 24px;
+            }
+            &-descr {
+                font-size: 11px;
+            }
+        }
+        &__right {
+            width: 290px;
+            &-descr {
+                font-size: 12px;
+            }
+        }
+        &__form {
+            &-top {
+                flex-direction: column;
+            }
+            &-bottom {
+                flex-direction: column;
+                margin-top: 5px;
+            }
+            &-input {
+                width: 250px;
+                margin-bottom: 5px;
+            }
+            &-btn {
+                width: 250px;
+                height: 34px;
+                margin-top: 10px;
+            }
+        }
+    }
+}

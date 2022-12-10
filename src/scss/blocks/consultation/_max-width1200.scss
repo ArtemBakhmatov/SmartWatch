@@ -1,0 +1,27 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .consultation {
+        &__content {
+            padding: 0px 50px;
+        }
+        &__wrapper {
+            height: 270px;
+        }
+        &__right {
+            width: 450px;
+        }
+        &__left {
+            width: 365px;
+        }
+        &__form {
+            &-input {
+                width: 220px;
+            }
+            &-btn {
+                width: 220px;
+            }
+        }
+    }
+}
