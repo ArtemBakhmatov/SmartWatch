@@ -1,0 +1,26 @@
+@media (max-width: 576px) {
+    .container {   
+        width: 100%;
+        padding: 0 5px;
+    }
+    .hits {
+        &__title {
+            font-size: 26px;
+            line-height: 26px;
+        }
+        &__tab {
+            font-size: 13px;
+            margin: 0 12px;
+            &:nth-child(1) {
+                &:after {
+                    left: 93px;
+                }
+            }
+            &:nth-child(3) {
+                &:after {
+                    left: -15px;
+                }
+            }
+        }      
+    }
+}

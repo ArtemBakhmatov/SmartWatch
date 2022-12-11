@@ -1,0 +1,40 @@
+@media (max-width: 576px) {
+    .container {   
+        width: 100%;
+        padding: 0 5px;
+    }
+    .reviews {
+        &__title {
+            font-size: 26px;
+            line-height: 26px;
+        }
+        &__slider {
+            width: 400px;
+        }
+        &__wrapper {
+            width: 400px;
+        }
+        &__img {
+            width: 80px;
+            height: 80px;
+        }
+        &__slide {
+            &-title {
+                font-size: 16px;
+                line-height: 16px;
+            }
+        }
+        &__descr {
+            font-size: 13px;
+            line-height: 20px;
+        }
+        &__bottom {
+            &-time {
+                font-size: 13px;
+            }
+            &-city {
+                font-size: 13px;
+            }
+        }
+    }
+}
