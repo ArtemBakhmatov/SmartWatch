@@ -1,0 +1,26 @@
+@media (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .footer {
+        &__top {
+            flex-direction: column;
+        }
+        &__block {
+            margin: 0 5px 20px 5px;
+            &-logo {
+                margin: 0 auto 15px auto;
+            }
+        }
+        &__bottom {
+            align-items: inherit;
+            padding-bottom: 10px;
+            span {
+                position: absolute;
+                bottom: 10px;
+                margin-left: 0;
+            }
+        }
+    }
+}

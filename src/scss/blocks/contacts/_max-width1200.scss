@@ -1,0 +1,16 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .contacts {
+        &__content {
+            padding: 0px 50px;
+            &-right {
+                width: 470px;
+            }
+            &-img {
+                width: 100%;
+            }
+        }
+    }
+}

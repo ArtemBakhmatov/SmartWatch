@@ -1,0 +1,21 @@
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+    .contacts {
+        &__content {
+            flex-direction: column;
+            &-left {
+                text-align: center;
+            }
+            &-right {
+                width: 500px;
+                margin-top: 27px;   
+            }
+        }
+        &__wrapper {
+            height: 430px;
+        }
+        
+    }
+}

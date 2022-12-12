@@ -1,0 +1,21 @@
+@media (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .contacts {
+        &__wrapper {
+            height: 350px;
+        }
+        &__content {
+            padding: 0px 0px;
+            &-title {
+                font-size: 24px;
+                line-height: 24px;
+            }
+            &-right {
+                width: 290px;
+            }
+        }
+    }
+}
