@@ -731,18 +731,18 @@ function modalCardChildren() {
                     Опыт пользования:
                     <span>Lorem ipsum dolor</span>
                 </div>
-                <div class="reviews__descr">
+                <div class="reviews__descr modalCard__descr-adaptiv">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem aliquid ex 
                 </div>
                 <div class="reviews__bottom">
-                    <div class="reviews__bottom-time">
+                    <div class="reviews__bottom-time modalCard__reviews-time">
                         21.12.2021
                     </div>
                     <div class="reviews__bottom-location">
                         <div class="reviews__bottom-img">
                             <svg fill="#cb11ab" id="Layer_1" style="enable-background:new 0 0 91 91;" version="1.1" viewBox="0 0 91 91" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M66.9,41.8c0-11.3-9.1-20.4-20.4-20.4c-11.3,0-20.4,9.1-20.4,20.4c0,11.3,20.4,32.4,20.4,32.4S66.9,53.1,66.9,41.8z    M37,41.4c0-5.2,4.3-9.5,9.5-9.5c5.2,0,9.5,4.2,9.5,9.5c0,5.2-4.2,9.5-9.5,9.5C41.3,50.9,37,46.6,37,41.4z"/></g></svg>
                         </div>
-                        <div class="reviews__bottom-city">
+                        <div class="reviews__bottom-city modalCard__reviews-city">
                             Москва
                         </div>
                     </div>
@@ -1184,6 +1184,8 @@ function modalCardChildren() {
                 item.classList.remove('show', 'fade');
             });
             document.body.style.overflow = '';
+            document.querySelector('.header-top').style.display = '';
+            document.querySelector('.header-bottom__right').style.display = '';
         }
         hideModalCard();
 
@@ -1191,6 +1193,8 @@ function modalCardChildren() {
             modalCardArr[i].classList.remove('hide');
             modalCardArr[i].classList.add('show', 'fade');
             document.body.style.overflow = 'hidden';
+            document.querySelector('.header-top').style.display = 'none';
+            document.querySelector('.header-bottom__right').style.display = 'none';
         }
 
         document.querySelector('.hits__content-children').addEventListener('click', (event) => {

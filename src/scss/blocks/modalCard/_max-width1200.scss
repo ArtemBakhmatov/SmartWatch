@@ -1,0 +1,60 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .modalCard {
+        &__close {
+            right: 0px;
+            top: -35px;
+        }
+        &__slide {
+            width: 400px;
+            height: 400px;
+        }
+        &__title {
+            font-size: 26px;
+        }
+        &__subtitle {
+            margin-top: 5px;
+        }
+        &__right {
+            &-wrapper {
+                margin-top: 10px;
+            }
+        }
+        &__item {
+            margin: 0px 25px;
+            font-size: 13px;
+            &:nth-child(1) {
+                &::after {
+                    left: 105px;
+                }
+            }
+            &:nth-child(2) {
+                &::after {
+                    left: 155px;
+                }
+            }
+            &:nth-child(3) {
+                &::after {
+                    left: 107px;
+                }
+            }
+            &:nth-child(5) {
+                &::after {
+                    left: -28px;
+                }
+            }
+        }
+        &__delivery {
+            &-block {
+                width: 425px;
+            }
+        }
+        &__questions {
+            &-wrapper {
+                justify-content: center;
+            }
+        }
+    }
+}

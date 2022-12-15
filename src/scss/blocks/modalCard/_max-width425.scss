@@ -1,0 +1,75 @@
+@media (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .modalCard {
+        &__right {
+            width: 100%;
+        }
+        &__title {
+            font-size: 19px;
+            text-align: center;
+            width: 255px;
+            margin: 5px auto 0 auto;
+        }
+        &__connection {
+            &-title {
+                font-size: 12px;
+            }
+            &-link {
+                font-size: 12px;
+            }
+            &-wrapper {
+                margin-bottom: 10px;
+            }
+        }
+        &__item {
+            &:nth-child(2) {
+                &::after {
+                    display: none;
+                }
+            }
+            &:nth-child(5) {
+                &::after {
+                    display: none;
+                }
+            }
+            &-reviews {
+                width: 275px;
+            }
+            &-descr {
+                margin-bottom: 5px;
+            }
+        }
+        &__delivery {
+            &-block {
+                &:nth-child(3) {
+                    height: 215px;
+                }
+            }
+        }
+        &__questions {
+            &-block {
+                width: 290px;
+                &:nth-child(3) {
+                    padding: 7px 10px;
+                }
+                &:nth-child(5) {
+                    padding: 7px 10px;
+                }
+            }
+        }
+        &__specifications {
+            &-flex {
+                padding: 5px 5px;
+            }
+            &-subtitle {
+                font-size: 11px;
+            }
+            &-descr {
+                width: 200px;
+            }
+        }
+    }
+}
