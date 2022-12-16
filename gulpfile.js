@@ -6,13 +6,14 @@ const browsersync = require("browser-sync");
 const fileinclude = require('gulp-file-include');
 const rename = require("gulp-rename");
 const sourcemaps = require('gulp-sourcemaps');
-//const htmlmin = require('gulp-htmlmin');
+const htmlmin = require('gulp-htmlmin');
 
 const dist = "./dist";
 
 gulp.task("html", () => {
     return gulp.src("./src/*.html")
                 .pipe(fileinclude())
+                .pipe(htmlmin({ collapseWhitespace: true }))
                 .pipe(gulp.dest(dist))
                 .pipe(browsersync.stream());
 });

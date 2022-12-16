@@ -31,6 +31,17 @@ function scrolling() {
                 }
             }
         });
+
+        function hideHeaderBottom() {
+            if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight -1) {
+                document.querySelector('.header-bottom__right').style.display = 'none';
+            } else {
+                document.querySelector('.header-bottom__right').style.display = '';
+            }
+            // скролл + окно браузера >= весь скролл // -1 -> добавил чтобы не было багов на др. мониторах
+        }
+    
+        window.addEventListener('scroll', hideHeaderBottom);
     });
 
 

@@ -1,6 +1,5 @@
 function consultationForm() {
     const form = document.querySelector('.consultation__form'),
-      checkbox = document.querySelector('[type="checkbox"]'),
          modal = document.querySelector('.consultation__modal');
 
     function closeModal() {
@@ -87,19 +86,21 @@ function consultationForm() {
         }, 3000);
     }
 
-    // fetch('https://jsonplaceholder.typicode.com/posts/1', {
-    //     method: 'POST',                         // метод
-    //     body: JSON.stringify({name: 'Alex'}),   // что отправляем
-    //     Headers: {                              // заголовок
+    // fetch('http://localhost', {
+    //     method: 'POST',              // метод
+    //     body: JSON.stringify(),      // что отправляем
+    //     Headers: {                   // заголовок
     //         'Content-type': 'application/json'
     //     }
     // })
     // .then(response => response.json()) // response -> ответ в json // response.json()) -> переводит в объект
     // .then(json => console.log(json));  // объект выводится в консоли
 
-    fetch('http://localhost:3000/menu')
+    /* fetch('http://localhost:3000/menu')
         .then(data => data.json())
-        .then(res => console.log(res));
+        .then(res => console.log(res)); */
+
+    
 
 }
 

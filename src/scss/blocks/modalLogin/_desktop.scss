@@ -1,0 +1,45 @@
+.modalLogin {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    &__close {
+        position: absolute;
+        top: -2px;
+        right: -40px;
+        font-size: 50px;
+        line-height: 25px;
+        color: $text-color1;
+        cursor: pointer;
+        transition: all 0.2s;
+        &:hover {
+            color: black;
+        }
+        &:active {
+            color: $text-color1;
+        }
+    }
+    &__wrapper {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 50px;
+        border: 1px solid $bg-color2;
+        border-radius: 8px;
+        background-color: $bg-color1;
+        height: 250px;
+        width: 250px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    &__btn {
+        width: 130px;
+        margin: 10px;
+    }
+}

@@ -49,3 +49,12 @@
 		text-shadow: 1px 1px 3px $bg-color2;
 	}
 }
+
+@keyframes snowfall {
+	0% {
+	  transform: translate3d(0, 0, 0);
+	}
+	100% {
+	  transform: translate3d(0, 110vh, 0);
+	}
+  }

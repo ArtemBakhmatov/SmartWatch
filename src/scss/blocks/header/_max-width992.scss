@@ -7,6 +7,7 @@
         height: 65px;
         &__hamburger {
             position: absolute;
+            z-index: 1;
             top: 15px;
             right: 10px;
             border: 2px solid $bg-color2;
@@ -17,6 +18,7 @@
             height: 33px;   
             border-radius: 4px;
             transition: 0.5s all;
+            cursor: pointer;
             &-block {
                 width: 18px;
                 height: 14px;

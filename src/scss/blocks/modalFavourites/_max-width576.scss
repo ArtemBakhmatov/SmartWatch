@@ -1,0 +1,36 @@
+@media (max-width: 576px) {
+    .container {   
+        width: 100%;
+        padding: 0 5px;
+    }
+    .modalFavourites {
+        &__title {
+            font-size: 20px;
+            &-right {
+                font-size: 15px;
+            }
+        }
+        &__wrapper {
+            height: 470px;
+            padding: 10px 5px;
+        }
+        &__block {
+            padding: 5px;
+            &-close {
+                right: 5px;
+                top: 5px;
+            }
+        }
+        &__left {
+            margin-right: 10px;
+        }
+        &__price {
+            &-old {
+                font-size: 13px;
+            }
+            &-new {
+                font-size: 17px;
+            }
+        }
+    }
+}

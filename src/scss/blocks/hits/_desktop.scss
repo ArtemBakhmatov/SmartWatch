@@ -9,6 +9,8 @@
         color: $text-color2;
     }
     &__tabs {
+        position: relative;
+        z-index: 2;
         display: flex;
         justify-content: center;
     }

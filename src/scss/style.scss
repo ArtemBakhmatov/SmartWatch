@@ -15,6 +15,7 @@
 @import './blocks/modalFavourites/_desktop';
 @import './blocks/modalBasket/_desktop';
 @import './blocks/footer/_desktop';
+@import './blocks/modalLogin/_desktop';
 
 @import './blocks/header/_max-width1400';
 @import './blocks/offer/_max-width1400';
@@ -23,6 +24,8 @@
 @import './blocks/contacts/_max-width1400';
 @import './blocks/modalCard/_max-width1400';
 @import './blocks/modalComparison/_max-width1400';
+@import './blocks/modalFavourites/_max-width1400';
+@import './blocks/modalBasket/_max-width1400';
 
 @import './blocks/header/_max-width1200';
 @import './blocks/offer/_max-width1200';
@@ -32,6 +35,8 @@
 @import './blocks/footer/_max-width1200';
 @import './blocks/modalCard/_max-width1200';
 @import './blocks/modalComparison/_max-width1200';
+@import './blocks/modalFavourites/_max-width1200';
+@import './blocks/modalBasket/_max-width1200';
 
 @import './blocks/header/_max-width992';
 @import './blocks/offer/_max-width992';
@@ -43,6 +48,9 @@
 @import './blocks/footer/_max-width992';
 @import './blocks/modalCard/_max-width992';
 @import './blocks/modalComparison/_max-width992';
+@import './blocks/modalFavourites/_max-width992';
+@import './blocks/modalBasket/_max-width992';
+@import './blocks/modalLogin/_max-width992';
 
 @import './blocks/header/_max-width768';
 @import './blocks/offer/_max-width768';
@@ -54,6 +62,8 @@
 @import './blocks/footer/_max-width768';
 @import './blocks/modalCard/_max-width768';
 @import './blocks/modalComparison/_max-width768';
+@import './blocks/modalFavourites/_max-width768';
+@import './blocks/modalBasket/max-width768';
 
 @import './blocks/header/_max-width576';
 @import './blocks/offer/_max-width576';
@@ -65,6 +75,8 @@
 @import './blocks/footer/_max-width576';
 @import './blocks/modalCard/_max-width576';
 @import './blocks/modalComparison/_max-width576';
+@import './blocks/modalFavourites/_max-width576';
+@import './blocks/modalBasket/_max-width576';
 
 @import './blocks/header/_max-width425';
 @import './blocks/offer/_max-width425';
@@ -76,3 +88,6 @@
 @import './blocks/footer/_max-width425';
 @import './blocks/modalCard/_max-width425';
 @import './blocks/modalComparison/_max-width425';
+@import './blocks/modalFavourites/_max-width425';
+@import './blocks/modalBasket/_max-width425';
+@import './blocks/modalLogin/_max-width425';

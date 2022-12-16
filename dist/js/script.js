@@ -98,7 +98,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "consultationForm", function() { return consultationForm; });
 function consultationForm() {
     const form = document.querySelector('.consultation__form'),
-      checkbox = document.querySelector('[type="checkbox"]'),
          modal = document.querySelector('.consultation__modal');
 
     function closeModal() {
@@ -185,19 +184,21 @@ function consultationForm() {
         }, 3000);
     }
 
-    // fetch('https://jsonplaceholder.typicode.com/posts/1', {
-    //     method: 'POST',                         // метод
-    //     body: JSON.stringify({name: 'Alex'}),   // что отправляем
-    //     Headers: {                              // заголовок
+    // fetch('http://localhost', {
+    //     method: 'POST',              // метод
+    //     body: JSON.stringify(),      // что отправляем
+    //     Headers: {                   // заголовок
     //         'Content-type': 'application/json'
     //     }
     // })
     // .then(response => response.json()) // response -> ответ в json // response.json()) -> переводит в объект
     // .then(json => console.log(json));  // объект выводится в консоли
 
-    fetch('http://localhost:3000/menu')
+    /* fetch('http://localhost:3000/menu')
         .then(data => data.json())
-        .then(res => console.log(res));
+        .then(res => console.log(res)); */
+
+    
 
 }
 
@@ -229,6 +230,7 @@ function hamburger() {
         btnCatalog.classList.add('header-bottom__catalog-active');
         menu.classList.add('header-top__wrapper-active');
         hamburger.classList.add('header__hamburger-active');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
@@ -239,6 +241,7 @@ function hamburger() {
         btnHamburger.classList.remove('header-bottom__hamburger-active');
         linkIconArrow.classList.remove('header-top__link-open');
         headerTopModal.classList.remove('header-top__modal-active');
+        document.body.style.overflow = '';
     }
 
     hamburger.addEventListener('click', () => {
@@ -6325,6 +6328,53 @@ function modalFavourites() {
 
 /***/ }),
 
+/***/ "./src/js/modules/modalLogin.js":
+/*!**************************************!*\
+  !*** ./src/js/modules/modalLogin.js ***!
+  \**************************************/
+/*! exports provided: modalLogin */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "modalLogin", function() { return modalLogin; });
+function modalLogin() {
+    const btn = document.querySelector('#modalLogin'),
+    close = document.querySelector('.modalLogin__close'),
+    modal = document.querySelector('.modalLogin');
+
+    function hideModalLogin() {
+        modal.classList.add('hide');
+        modal.classList.remove('show', 'fade');
+        document.body.style.overflow = '';
+    }
+    hideModalLogin();
+    function showModalLogin() {
+        modal.classList.add('show', 'fade');
+        modal.classList.remove('hide');
+        document.body.style.overflow = 'hidden';
+    }
+
+    btn.addEventListener('click', showModalLogin);
+    close.addEventListener('click', hideModalLogin);
+
+    modal.addEventListener('click', (event) => {
+        if(event.target === modal) {
+            hideModalLogin();
+        }
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if(event.code === 'Escape' && modal.classList.contains('show')) {
+            hideModalLogin();
+        }
+    }); 
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/offerSlider.js":
 /*!***************************************!*\
   !*** ./src/js/modules/offerSlider.js ***!
@@ -6447,7 +6497,7 @@ function offerSlider() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "offerTimer", function() { return offerTimer; });
 function offerTimer() {
-    const deadline = '2022-12-14';    // время в будущем
+    const deadline = '2022-12-31';    // время в будущем
 
     function getTimerRemaining(endtime) {  // получить оставшийся таймер (разница между deadline и наст. время)
         let days, hours, minutes, seconds;
@@ -6648,10 +6698,46 @@ function scrolling() {
                 }
             }
         });
+
+        function hideHeaderBottom() {
+            if(window.pageYOffset + document.documentElement.clientHeight >= document.documentElement.scrollHeight -1) {
+                document.querySelector('.header-bottom__right').style.display = 'none';
+            } else {
+                document.querySelector('.header-bottom__right').style.display = '';
+            }
+            // скролл + окно браузера >= весь скролл // -1 -> добавил чтобы не было багов на др. мониторах
+        }
+    
+        window.addEventListener('scroll', hideHeaderBottom);
     });
 
 
     
+}
+
+
+
+/***/ }),
+
+/***/ "./src/js/modules/snowstorm.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/snowstorm.js ***!
+  \*************************************/
+/*! exports provided: snowstorm */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "snowstorm", function() { return snowstorm; });
+function snowstorm() {
+    const snowstorm = document.createElement('div');
+    snowstorm.classList.add('snowstorm');
+    document.body.append(snowstorm);
+    for(let i = 0; i <= 50; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowstorm.append(snowflake);
+    }
 }
 
 
@@ -6781,6 +6867,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/validationInputs */ "./src/js/modules/validationInputs.js");
 /* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
 /* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+/* harmony import */ var _modules_modalLogin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/modalLogin */ "./src/js/modules/modalLogin.js");
+/* harmony import */ var _modules_snowstorm__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/snowstorm */ "./src/js/modules/snowstorm.js");
+
+
 
 
 
@@ -6824,6 +6914,8 @@ window.addEventListener('DOMContentLoaded', () => {
     Object(_modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__["validationInputs"])();
     Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_18__["scrolling"])();
     Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_19__["hamburger"])();
+    Object(_modules_modalLogin__WEBPACK_IMPORTED_MODULE_20__["modalLogin"])();
+    Object(_modules_snowstorm__WEBPACK_IMPORTED_MODULE_21__["snowstorm"])();
 });
 
 /***/ })

@@ -18,6 +18,8 @@ import { mask } from "./modules/maskPhone";
 import { validationInputs } from "./modules/validationInputs";
 import { scrolling } from "./modules/scrolling";
 import { hamburger } from "./modules/hamburger";
+import { modalLogin } from "./modules/modalLogin";
+import { snowstorm } from "./modules/snowstorm";
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -41,4 +43,6 @@ window.addEventListener('DOMContentLoaded', () => {
     validationInputs();
     scrolling();
     hamburger();
+    modalLogin();
+    snowstorm();
 });

@@ -1,6 +1,8 @@
 .footer {
     background: $bg-theme;
     &__top {
+        position: relative;
+        z-index: 2;
         padding-top: 25px;
         display: flex;
         justify-content: space-between;

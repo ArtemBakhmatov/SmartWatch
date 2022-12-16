@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+    }
+    .modalBasket {
+        &__title {
+            &-right {
+                font-size: 17px;
+            }
+        }
+        &__right {
+            &-wrapper {
+                margin-top: 7px;
+            }
+        }
+    }
+}

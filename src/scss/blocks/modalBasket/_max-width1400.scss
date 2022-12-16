@@ -1,0 +1,11 @@
+@media (max-width: 1400px) {
+    .container {
+        max-width: 1140px;
+    }
+    .modalBasket {
+        &__close {
+            right: -30px;
+            top: -2px;
+        }
+    }
+}

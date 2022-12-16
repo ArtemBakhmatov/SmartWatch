@@ -12,6 +12,7 @@ function hamburger() {
         btnCatalog.classList.add('header-bottom__catalog-active');
         menu.classList.add('header-top__wrapper-active');
         hamburger.classList.add('header__hamburger-active');
+        document.body.style.overflow = 'hidden';
     }
 
     function closeMenu() {
@@ -22,6 +23,7 @@ function hamburger() {
         btnHamburger.classList.remove('header-bottom__hamburger-active');
         linkIconArrow.classList.remove('header-top__link-open');
         headerTopModal.classList.remove('header-top__modal-active');
+        document.body.style.overflow = '';
     }
 
     hamburger.addEventListener('click', () => {

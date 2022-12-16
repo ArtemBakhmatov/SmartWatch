@@ -32,6 +32,7 @@
         overflow: hidden;
         padding: 25px 0 10px 0;
         position: relative;
+        z-index: 2;
         &:hover {
             .offer__slider-prev {
                 left: 10px;
@@ -147,6 +148,8 @@
             }
         }
         &-indicators {
+            position: relative;
+            z-index: 2;
             display: flex;
             justify-content: center;
             padding-bottom: 50px;

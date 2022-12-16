@@ -1,0 +1,23 @@
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+    .modalFavourites {
+        &__close {
+            right: 3px;
+            top: -40px;
+        }
+        &__title {
+            &-right {
+                font-size: 20px;
+            }
+        }
+        &__left {
+            width: 95px;
+            height: 95px;
+        }
+        &__block {
+            margin-bottom: 10px;
+        }
+    }
+}
