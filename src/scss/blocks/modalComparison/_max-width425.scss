@@ -1,0 +1,55 @@
+@media (max-width: 425px) {
+    .container {
+        width: 100%;
+        padding: 0 5px;
+    }
+    .modalComparison {
+        &__title {
+            font-size: 18px;
+            &-right {
+                font-size: 13px;
+            }
+        }
+        &__empty {
+            width: 290px;
+        }
+        &__wrapper {
+            height: 450px;
+        }
+        &__left {
+            width: 50px;
+            height: 50px;
+            margin-right: 2px;
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+        &__block {
+            padding: 2px;
+            &-close {
+                right: 2px;
+                top: 2px;
+            }
+        }
+        &__right {
+            &-wrapper {
+                margin-top: 5px;
+            }
+        }
+        &__firm {
+            font-size: 11px;
+        }
+        &__warehouse {
+            font-size: 13px;
+        }
+        &__price {
+            right: 5px;
+            bottom: 2px;
+            &-old {
+                font-size: 10px;
+            }
+            &-new {
+                font-size: 13px;
+            }
+        }
+    }
+}

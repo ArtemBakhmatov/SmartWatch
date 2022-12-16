@@ -286,7 +286,7 @@ function menuCardChildren() {
         comparisonFlex.append(comparisonRight);
 
         const comparisonTitle = document.createElement('div');
-        comparisonTitle.classList.add('modalComparison__title');
+        comparisonTitle.classList.add('modalComparison__title-right');
         comparisonTitle.textContent = titleCard;
         comparisonRight.append(comparisonTitle);
 
@@ -471,7 +471,7 @@ function menuCardChildren() {
         favouritesFlex.append(favouritesRight);
 
         const favouritesTitle = document.createElement('div');
-        favouritesTitle.classList.add('modalFavourites__title');
+        favouritesTitle.classList.add('modalFavourites__title-right');
         favouritesTitle.textContent = titleCard;
         favouritesRight.append(favouritesTitle);
 
@@ -656,7 +656,7 @@ function menuCardChildren() {
         basketFlex.append(basketRight);
 
         const basketTitle = document.createElement('div');
-        basketTitle.classList.add('modalBasket__title');
+        basketTitle.classList.add('modalBasket__title-right');
         basketTitle.textContent = titleCard;
         basketRight.append(basketTitle);
 

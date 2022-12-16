@@ -58,6 +58,13 @@
         font-style: italic;
         font-weight: 600;
         text-align: center;
+        &-right {
+            font-weight: 600;
+            font-size: 22px;
+            text-align: center;
+            color: $text-color2;
+            font-style: normal;
+        }
     }
     &__img {
         display: block;
