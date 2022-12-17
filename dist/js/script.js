@@ -263,6 +263,29 @@ function hamburger() {
 
 /***/ }),
 
+/***/ "./src/js/modules/loadStart.js":
+/*!*************************************!*\
+  !*** ./src/js/modules/loadStart.js ***!
+  \*************************************/
+/*! exports provided: loadStart */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loadStart", function() { return loadStart; });
+function loadStart() {
+    const loadStart = document.querySelector('.loadStart'),
+        body = document.querySelector('body');
+    setTimeout(() => {
+        loadStart.classList.add('hide', 'fade');
+        body.classList.add('overflowTrue');
+    },3000);
+}
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/maskPhone.js":
 /*!*************************************!*\
   !*** ./src/js/modules/maskPhone.js ***!
@@ -6732,7 +6755,8 @@ __webpack_require__.r(__webpack_exports__);
 function snowstorm() {
     const snowstorm = document.createElement('div');
     snowstorm.classList.add('snowstorm');
-    document.body.append(snowstorm);
+    const footer = document.querySelector('footer');
+    footer.append(snowstorm);
     for(let i = 0; i <= 50; i++) {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
@@ -6847,28 +6871,30 @@ function validationInputs() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_modalCatalog__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCatalog */ "./src/js/modules/modalCatalog.js");
-/* harmony import */ var _modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modalBuyer */ "./src/js/modules/modalBuyer.js");
-/* harmony import */ var _modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/offerSlider */ "./src/js/modules/offerSlider.js");
-/* harmony import */ var _modules_offerTimer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/offerTimer */ "./src/js/modules/offerTimer.js");
-/* harmony import */ var _modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/reviewsSlider */ "./src/js/modules/reviewsSlider.js");
-/* harmony import */ var _modules_menuCardChildren__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/menuCardChildren */ "./src/js/modules/menuCardChildren.js");
-/* harmony import */ var _modules_modalCardChildren__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/modalCardChildren */ "./src/js/modules/modalCardChildren.js");
-/* harmony import */ var _modules_menuCardGrown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/menuCardGrown */ "./src/js/modules/menuCardGrown.js");
-/* harmony import */ var _modules_modalCardGrown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/modalCardGrown */ "./src/js/modules/modalCardGrown.js");
-/* harmony import */ var _modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/menuCardElderly */ "./src/js/modules/menuCardElderly.js");
-/* harmony import */ var _modules_modalCardElderly__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/modalCardElderly */ "./src/js/modules/modalCardElderly.js");
-/* harmony import */ var _modules_tabsCards__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/tabsCards */ "./src/js/modules/tabsCards.js");
-/* harmony import */ var _modules_modalComparison__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/modalComparison */ "./src/js/modules/modalComparison.js");
-/* harmony import */ var _modules_modalFavourites__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/modalFavourites */ "./src/js/modules/modalFavourites.js");
-/* harmony import */ var _modules_modalBasket__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/modalBasket */ "./src/js/modules/modalBasket.js");
-/* harmony import */ var _modules_consultationForm__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/consultationForm */ "./src/js/modules/consultationForm.js");
-/* harmony import */ var _modules_maskPhone__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/maskPhone */ "./src/js/modules/maskPhone.js");
-/* harmony import */ var _modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/validationInputs */ "./src/js/modules/validationInputs.js");
-/* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
-/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
-/* harmony import */ var _modules_modalLogin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/modalLogin */ "./src/js/modules/modalLogin.js");
-/* harmony import */ var _modules_snowstorm__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/snowstorm */ "./src/js/modules/snowstorm.js");
+/* harmony import */ var _modules_loadStart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/loadStart */ "./src/js/modules/loadStart.js");
+/* harmony import */ var _modules_modalCatalog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/modalCatalog */ "./src/js/modules/modalCatalog.js");
+/* harmony import */ var _modules_modalBuyer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modalBuyer */ "./src/js/modules/modalBuyer.js");
+/* harmony import */ var _modules_offerSlider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/offerSlider */ "./src/js/modules/offerSlider.js");
+/* harmony import */ var _modules_offerTimer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/offerTimer */ "./src/js/modules/offerTimer.js");
+/* harmony import */ var _modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/reviewsSlider */ "./src/js/modules/reviewsSlider.js");
+/* harmony import */ var _modules_menuCardChildren__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/menuCardChildren */ "./src/js/modules/menuCardChildren.js");
+/* harmony import */ var _modules_modalCardChildren__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/modalCardChildren */ "./src/js/modules/modalCardChildren.js");
+/* harmony import */ var _modules_menuCardGrown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/menuCardGrown */ "./src/js/modules/menuCardGrown.js");
+/* harmony import */ var _modules_modalCardGrown__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/modalCardGrown */ "./src/js/modules/modalCardGrown.js");
+/* harmony import */ var _modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/menuCardElderly */ "./src/js/modules/menuCardElderly.js");
+/* harmony import */ var _modules_modalCardElderly__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/modalCardElderly */ "./src/js/modules/modalCardElderly.js");
+/* harmony import */ var _modules_tabsCards__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/tabsCards */ "./src/js/modules/tabsCards.js");
+/* harmony import */ var _modules_modalComparison__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./modules/modalComparison */ "./src/js/modules/modalComparison.js");
+/* harmony import */ var _modules_modalFavourites__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./modules/modalFavourites */ "./src/js/modules/modalFavourites.js");
+/* harmony import */ var _modules_modalBasket__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./modules/modalBasket */ "./src/js/modules/modalBasket.js");
+/* harmony import */ var _modules_consultationForm__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./modules/consultationForm */ "./src/js/modules/consultationForm.js");
+/* harmony import */ var _modules_maskPhone__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./modules/maskPhone */ "./src/js/modules/maskPhone.js");
+/* harmony import */ var _modules_validationInputs__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./modules/validationInputs */ "./src/js/modules/validationInputs.js");
+/* harmony import */ var _modules_scrolling__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./modules/scrolling */ "./src/js/modules/scrolling.js");
+/* harmony import */ var _modules_hamburger__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./modules/hamburger */ "./src/js/modules/hamburger.js");
+/* harmony import */ var _modules_modalLogin__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./modules/modalLogin */ "./src/js/modules/modalLogin.js");
+/* harmony import */ var _modules_snowstorm__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./modules/snowstorm */ "./src/js/modules/snowstorm.js");
+
 
 
 
@@ -6894,28 +6920,30 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener('DOMContentLoaded', () => {
-    Object(_modules_modalCatalog__WEBPACK_IMPORTED_MODULE_0__["modalCatalog"])();
-    Object(_modules_modalBuyer__WEBPACK_IMPORTED_MODULE_1__["modalBuyer"])();
-    Object(_modules_offerSlider__WEBPACK_IMPORTED_MODULE_2__["offerSlider"])();
-    Object(_modules_offerTimer__WEBPACK_IMPORTED_MODULE_3__["offerTimer"])();
-    Object(_modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_4__["reviewsSlider"])();
-    Object(_modules_modalComparison__WEBPACK_IMPORTED_MODULE_12__["modalComparison"])();
-    Object(_modules_modalFavourites__WEBPACK_IMPORTED_MODULE_13__["modalFavourites"])();
-    Object(_modules_modalBasket__WEBPACK_IMPORTED_MODULE_14__["modalBasket"])();
-    Object(_modules_menuCardChildren__WEBPACK_IMPORTED_MODULE_5__["menuCardChildren"])();
-    Object(_modules_modalCardChildren__WEBPACK_IMPORTED_MODULE_6__["modalCardChildren"])();
-    Object(_modules_menuCardGrown__WEBPACK_IMPORTED_MODULE_7__["menuCardGrown"])();
-    Object(_modules_modalCardGrown__WEBPACK_IMPORTED_MODULE_8__["modalCardGrown"])();
-    Object(_modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_9__["menuCardElderly"])();
-    Object(_modules_modalCardElderly__WEBPACK_IMPORTED_MODULE_10__["modalCardElderly"])();
-    Object(_modules_tabsCards__WEBPACK_IMPORTED_MODULE_11__["tabsCards"])();
-    Object(_modules_consultationForm__WEBPACK_IMPORTED_MODULE_15__["consultationForm"])();
-    Object(_modules_maskPhone__WEBPACK_IMPORTED_MODULE_16__["mask"])();
-    Object(_modules_validationInputs__WEBPACK_IMPORTED_MODULE_17__["validationInputs"])();
-    Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_18__["scrolling"])();
-    Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_19__["hamburger"])();
-    Object(_modules_modalLogin__WEBPACK_IMPORTED_MODULE_20__["modalLogin"])();
-    Object(_modules_snowstorm__WEBPACK_IMPORTED_MODULE_21__["snowstorm"])();
+    
+    Object(_modules_modalCatalog__WEBPACK_IMPORTED_MODULE_1__["modalCatalog"])();
+    Object(_modules_modalBuyer__WEBPACK_IMPORTED_MODULE_2__["modalBuyer"])();
+    Object(_modules_offerSlider__WEBPACK_IMPORTED_MODULE_3__["offerSlider"])();
+    Object(_modules_offerTimer__WEBPACK_IMPORTED_MODULE_4__["offerTimer"])();
+    Object(_modules_reviewsSlider__WEBPACK_IMPORTED_MODULE_5__["reviewsSlider"])();
+    Object(_modules_modalComparison__WEBPACK_IMPORTED_MODULE_13__["modalComparison"])();
+    Object(_modules_modalFavourites__WEBPACK_IMPORTED_MODULE_14__["modalFavourites"])();
+    Object(_modules_modalBasket__WEBPACK_IMPORTED_MODULE_15__["modalBasket"])();
+    Object(_modules_menuCardChildren__WEBPACK_IMPORTED_MODULE_6__["menuCardChildren"])();
+    Object(_modules_modalCardChildren__WEBPACK_IMPORTED_MODULE_7__["modalCardChildren"])();
+    Object(_modules_menuCardGrown__WEBPACK_IMPORTED_MODULE_8__["menuCardGrown"])();
+    Object(_modules_modalCardGrown__WEBPACK_IMPORTED_MODULE_9__["modalCardGrown"])();
+    Object(_modules_menuCardElderly__WEBPACK_IMPORTED_MODULE_10__["menuCardElderly"])();
+    Object(_modules_modalCardElderly__WEBPACK_IMPORTED_MODULE_11__["modalCardElderly"])();
+    Object(_modules_tabsCards__WEBPACK_IMPORTED_MODULE_12__["tabsCards"])();
+    Object(_modules_consultationForm__WEBPACK_IMPORTED_MODULE_16__["consultationForm"])();
+    Object(_modules_maskPhone__WEBPACK_IMPORTED_MODULE_17__["mask"])();
+    Object(_modules_validationInputs__WEBPACK_IMPORTED_MODULE_18__["validationInputs"])();
+    Object(_modules_scrolling__WEBPACK_IMPORTED_MODULE_19__["scrolling"])();
+    Object(_modules_hamburger__WEBPACK_IMPORTED_MODULE_20__["hamburger"])();
+    Object(_modules_modalLogin__WEBPACK_IMPORTED_MODULE_21__["modalLogin"])();
+    Object(_modules_snowstorm__WEBPACK_IMPORTED_MODULE_22__["snowstorm"])();
+    Object(_modules_loadStart__WEBPACK_IMPORTED_MODULE_0__["loadStart"])();
 });
 
 /***/ })

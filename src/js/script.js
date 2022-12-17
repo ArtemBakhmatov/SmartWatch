@@ -1,3 +1,4 @@
+import { loadStart } from "./modules/loadStart";
 import { modalCatalog } from "./modules/modalCatalog";
 import { modalBuyer } from "./modules/modalBuyer";
 import { offerSlider } from "./modules/offerSlider";
@@ -23,6 +24,7 @@ import { snowstorm } from "./modules/snowstorm";
 
 
 window.addEventListener('DOMContentLoaded', () => {
+    
     modalCatalog();
     modalBuyer();
     offerSlider();
@@ -45,4 +47,5 @@ window.addEventListener('DOMContentLoaded', () => {
     hamburger();
     modalLogin();
     snowstorm();
+    loadStart();
 });

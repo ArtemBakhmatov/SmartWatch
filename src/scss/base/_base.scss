@@ -19,6 +19,14 @@
     }
 }
 
+body {
+    overflow: hidden;
+}
+
+.overflowTrue {
+    overflow: visible;
+}
+
 .container {
     max-width: 1220px;
     margin: 0 auto;
