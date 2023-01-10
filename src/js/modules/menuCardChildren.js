@@ -858,128 +858,127 @@ function menuCardChildren() {
         });
     }
 
-    // menuCardRender(
-    //     'new',
-    //     'img/cards/children/wonlex/KT17/black.jpeg',    // первый слайд 
-    //     'img/cards/children/wonlex/KT17/pink.jpeg',     // второй слайд 
-    //     'img/cards/children/wonlex/KT17/blue.jpeg',     // третий слайд
-    //     4,                                              // количесто звезд
-    //     6,                                              // количество отзывов
-    //     'Детские смарт-часы KT17 «4G»',                 // описание товара
-    //     'Черные',
-    //     'Розовые', 
-    //     'Голубые',                              
-    //     'Wonlex',                              // фирма
-    //     'Для детей',                           // Для кого 
-    //     '8490',                                // старая цена
-    //     '6900',                                // новая цена
-    //     'black',                               // добавляем класс black
-    //     'pink',                                // добавляем класс pink                
-    //     'blue',                                // добавляем класс blue
-    //     'Есть',                                // Наличие
-    //     5                                      // количество карточек товара
-    // );  
-    // menuCardRender(
-    //     'hit',
-    //     'img/cards/children/wonlex/KT15/black.jpg',
-    //     'img/cards/children/wonlex/KT15/pink.jpg',
-    //     'img/cards/children/wonlex/KT15/blue.jpg',
-    //     5,
-    //     13,
-    //     'Детские смарт-часы KT15 «4G»',
-    //     'Черные',
-    //     'Розовые', 
-    //     'Голубые',
-    //     'Wonlex',
-    //     'Для детей',
-    //     '9490',
-    //     '7490',
-    //     'black',
-    //     'pink',
-    //     'blue',
-    //     'Есть',
-    //     5
-    // ); 
-    // menuCardRender(
-    //     'hit',
-    //     'img/cards/children/wonlex/KT12/black.jpg',
-    //     'img/cards/children/wonlex/KT12/pink.jpg',
-    //     'img/cards/children/wonlex/KT12/blue.jpg',
-    //     5,
-    //     11,
-    //     'Детские смарт-часы KT12 «4G»',
-    //     'Черные',
-    //     'Розовые', 
-    //     'Голубые',
-    //     'Wonlex',
-    //     'Для детей',
-    //     '8490',
-    //     '6490',
-    //     'black',
-    //     'pink',
-    //     'blue',
-    //     'Есть',
-    //     5
-    // ); 
-    // menuCardRender(
-    //     'hit',
-    //     'img/cards/children/wonlex/GW500s/black.jpg',
-    //     'img/cards/children/wonlex/GW500s/pink.jpg',
-    //     'img/cards/children/wonlex/GW500s/blue.jpg',
-    //     3,
-    //     37,
-    //     'Детские смарт-часы GW500s',
-    //     'Черные',
-    //     'Розовые', 
-    //     'Голубые',
-    //     'Wonlex',
-    //     'Для детей',
-    //     '5490',
-    //     '3490',
-    //     'black',
-    //     'pink',
-    //     'blue',
-    //     'Есть',
-    //     5
-    // ); 
-    // menuCardRender(
-    //     'hit',
-    //     'img/cards/children/wonlex/KT22/black.jpg',
-    //     'img/cards/children/wonlex/KT22/pink.jpg',
-    //     'img/cards/children/wonlex/KT22/blue.jpg',
-    //     5,
-    //     25,
-    //     'Детские смарт-часы KT22 «4G»',
-    //     'Черные',
-    //     'Розовые', 
-    //     'Голубые',
-    //     'Wonlex',
-    //     'Для детей',
-    //     '8490',
-    //     '6490',
-    //     'black',
-    //     'pink',
-    //     'blue',
-    //     'Есть',
-    //     5
-    // ); 
+    menuCardRender(
+        'new',
+        'img/cards/children/wonlex/KT17/black.jpeg',    // первый слайд 
+        'img/cards/children/wonlex/KT17/pink.jpeg',     // второй слайд 
+        'img/cards/children/wonlex/KT17/blue.jpeg',     // третий слайд
+        4,                                              // количесто звезд
+        6,                                              // количество отзывов
+        'Детские смарт-часы KT17 «4G»',                 // описание товара
+        'Черные',
+        'Розовые', 
+        'Голубые',                              
+        'Wonlex',                              // фирма
+        'Для детей',                           // Для кого 
+        '8490',                                // старая цена
+        '6900',                                // новая цена
+        'black',                               // добавляем класс black
+        'pink',                                // добавляем класс pink                
+        'blue',                                // добавляем класс blue
+        'Есть',                                // Наличие
+        5                                      // количество карточек товара
+    );  
+    menuCardRender(
+        'hit',
+        'img/cards/children/wonlex/KT15/black.jpg',
+        'img/cards/children/wonlex/KT15/pink.jpg',
+        'img/cards/children/wonlex/KT15/blue.jpg',
+        5,
+        13,
+        'Детские смарт-часы KT15 «4G»',
+        'Черные',
+        'Розовые', 
+        'Голубые',
+        'Wonlex',
+        'Для детей',
+        '9490',
+        '7490',
+        'black',
+        'pink',
+        'blue',
+        'Есть',
+        5
+    ); 
+    menuCardRender(
+        'hit',
+        'img/cards/children/wonlex/KT12/black.jpg',
+        'img/cards/children/wonlex/KT12/pink.jpg',
+        'img/cards/children/wonlex/KT12/blue.jpg',
+        5,
+        11,
+        'Детские смарт-часы KT12 «4G»',
+        'Черные',
+        'Розовые', 
+        'Голубые',
+        'Wonlex',
+        'Для детей',
+        '8490',
+        '6490',
+        'black',
+        'pink',
+        'blue',
+        'Есть',
+        5
+    ); 
+    menuCardRender(
+        'hit',
+        'img/cards/children/wonlex/GW500s/black.jpg',
+        'img/cards/children/wonlex/GW500s/pink.jpg',
+        'img/cards/children/wonlex/GW500s/blue.jpg',
+        3,
+        37,
+        'Детские смарт-часы GW500s',
+        'Черные',
+        'Розовые', 
+        'Голубые',
+        'Wonlex',
+        'Для детей',
+        '5490',
+        '3490',
+        'black',
+        'pink',
+        'blue',
+        'Есть',
+        5
+    ); 
+    menuCardRender(
+        'hit',
+        'img/cards/children/wonlex/KT22/black.jpg',
+        'img/cards/children/wonlex/KT22/pink.jpg',
+        'img/cards/children/wonlex/KT22/blue.jpg',
+        5,
+        25,
+        'Детские смарт-часы KT22 «4G»',
+        'Черные',
+        'Розовые', 
+        'Голубые',
+        'Wonlex',
+        'Для детей',
+        '8490',
+        '6490',
+        'black',
+        'pink',
+        'blue',
+        'Есть',
+        5
+    ); 
     
-    const getResourse = async (url) => {  // async -> асинхронный код
-        const res = await fetch(url);
+    // const getResourse = async (url) => {  // async -> асинхронный код
+    //     const res = await fetch(url);
 
-        if(!res.ok) {
-            throw new Error(`Не удалось получить ${url}, status: ${res.status}`);
-        }
+    //     if(!res.ok) {
+    //         throw new Error(`Не удалось получить ${url}, status: ${res.status}`);
+    //     }
 
-        return await res.json(); 
-    };
-
-    getResourse('http://localhost:3000/childrenCard')
-        .then(data => {
-            data.forEach(({hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3, availability, numberProductCards}) => {
-                menuCardRender(hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3, availability, numberProductCards);
-            });
-        });
+    //     return await res.json(); 
+    // };
+    // getResourse('http://localhost:3000/childrenCard')
+    //     .then(data => {
+    //         data.forEach(({hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3, availability, numberProductCards}) => {
+    //             menuCardRender(hit, image1, image2, image3, numberStars, numberReviews, titleCard, blackColor, pinkColor, blueColor, firm, children, priceOld, priceNew, color1, color2, color3, availability, numberProductCards);
+    //         });
+    //     });
 }    
     
 export {menuCardChildren};

@@ -76,3 +76,14 @@ gulp.task("watch", () => {
 gulp.task("build", gulp.parallel("html", "scripts", "styles", "fonts", "icons", "images"));
 
 gulp.task("default", gulp.parallel("watch", "build"));
+
+gulp.task("scripts-min", () => {
+    return gulp.src("./src/js/script.js")
+                .pipe(webpack({
+                    mode: 'production',
+                    output: {
+                        filename: 'script.js'
+                    },
+                }))
+                .pipe(gulp.dest(dist + '/js'));
+});
